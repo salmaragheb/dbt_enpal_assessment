@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: stg_activity_types
+    description: 
+      Staging model for Pipedrive activity types. Clean 1-1 representation of the source
+      table with renamed columns. Reference table mapping internal activity type slugs
+      to human-readable names.
+    columns:
+      - name: activity_type_id
+        description: "Unique identifier of the activity type."
+        tests:
+          - unique
+          - not_null
+      - name: activity_type_name
+        description: "Human-readable name of the activity type (e.g. Sales Call 1, Sales Call 2)."
+        tests:
+          - not_null
+      - name: activity_type_key
+        description: "Internal slug used to identify the activity type in the activity table (e.g. meeting, sc_2)."
+        tests:
+          - unique
+          - not_null
+      - name: is_active
+        description: "Indicates whether the activity type is currently active in Pipedrive."
+        tests:
+          - not_null
