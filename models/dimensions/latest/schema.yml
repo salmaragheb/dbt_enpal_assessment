@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: dim_users_latest
+    description: 
+      View exposing the current state of all active Pipedrive users.
+      Filters dim_users to the latest version of each user record.
+      Intended for end-user consumption - dbt metadata columns are excluded.
+    columns:
+      - name: user_id
+        description: "Unique identifier of the user in Pipedrive."
+        tests:
+          - unique
+          - not_null
+      - name: user_name
+        description: "Full name of the user."
+        tests:
+          - not_null
+      - name: email
+        description: "Email address of the user."
+        tests:
+          - not_null
+      - name: modified
+        description: "Timestamp of the last modification of the user record in the source system."
+        tests:
+          - not_null

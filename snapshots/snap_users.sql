@@ -4,7 +4,7 @@
         config(
             unique_key = 'id',
             strategy = 'check',
-            check_cols = ['name', 'email'],
+            check_cols = ['user_name', 'email'],
             hard_deletes = 'invalidate'
         )
     }}
