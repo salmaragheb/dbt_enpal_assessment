@@ -1,0 +1,46 @@
+version: 2
+
+models:
+  - name: fct_activity
+    description: 
+      Fact table representing all sales activities logged in Pipedrive. Each row is a
+      discrete sales interaction linked to a deal and a user. Incrementally loaded using
+      an append strategy to capture new activities and add them to existing ones
+      (e.g. a completed activity flipping from done = false to done = true).
+    columns:
+      - name: activity_id
+        description: "Identifier of the activity."
+        tests:
+          - not_null
+      - name: deal_id
+        description: "ID of the deal this activity is linked to."
+        tests:
+          - not_null
+      - name: assigned_to_user
+        description: "ID of the user assigned to this activity."
+        tests:
+          - not_null
+      - name: activity_type_id
+        description: "Unique identifier of the activity type. Foreign key to stg_activity_types."
+        tests:
+          - not_null
+      - name: activity_type_name
+        description: "Human-readable name of the activity type (e.g. Sales Call 1, Sales Call 2)."
+        tests:
+          - not_null
+      - name: activity_type_key
+        description: "Internal slug identifying the activity type (e.g. meeting, sc_2)."
+        tests:
+          - not_null
+      - name: is_activity_type_active
+        description: "Indicates whether the activity type is currently active in Pipedrive."
+        tests:
+          - not_null
+      - name: done
+        description: "Indicates whether the activity has been completed."
+        tests:
+          - not_null
+      - name: due_to
+        description: "Timestamp when the activity is due or was completed. Used as the incremental filter column."
+        tests:
+          - not_null

@@ -25,3 +25,33 @@ models:
         description: "Indicates whether the activity type is currently active in Pipedrive."
         tests:
           - not_null
+
+  - name: stg_activity
+    description: 
+      Staging model for Pipedrive activities. Clean 1-1 representation of the source
+      table. Each row represents a single sales activity linked to a deal.
+    columns:
+      - name: activity_id
+        description: "Unique identifier of the activity."
+        tests:
+          - not_null
+      - name: activity_type_key
+        description: "Internal slug identifying the activity type. Foreign key to stg_activity_types."
+        tests:
+          - not_null
+      - name: assigned_to_user
+        description: "ID of the user assigned to this activity."
+        tests:
+          - not_null
+      - name: deal_id
+        description: "ID of the deal this activity is linked to."
+        tests:
+          - not_null
+      - name: done
+        description: "Indicates whether the activity has been completed."
+        tests:
+          - not_null
+      - name: due_to
+        description: "Timestamp when the activity is due or was completed."
+        tests:
+          - not_null

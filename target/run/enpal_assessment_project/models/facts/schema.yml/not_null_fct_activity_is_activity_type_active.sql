@@ -1,0 +1,24 @@
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select is_activity_type_active
+from "postgres"."public_pipedrive_analytics"."fct_activity"
+where is_activity_type_active is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test

@@ -1,8 +1,4 @@
-{{
-    config(
-        materialized = 'view'
-    )
-}}
+
 
 select
     activity_id,
@@ -11,4 +7,4 @@ select
     deal_id,
     done,
     due_to
-from {{ source('postgres_public', 'activity') }}
+from "postgres"."public"."activity"
