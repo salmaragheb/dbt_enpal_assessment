@@ -71,3 +71,26 @@ models:
         description: "Human-readable name of the pipeline stage (e.g. Lead Generation, Qualified Lead)."
         tests:
           - not_null
+
+  - name: stg_fields
+    description: 
+      Staging model for Pipedrive field metadata. Each row represents a deal field
+      tracked in Pipedrive. Fields with a fixed set of values (e.g. stage, lost reason)
+      store their options as a JSON blob in field_value_options.
+    columns:
+      - name: field_id
+        description: "Unique identifier of the field."
+        tests:
+          - unique
+          - not_null
+      - name: field_key
+        description: "Internal key identifying the field (e.g. stage_id, lost_reason)."
+        tests:
+          - unique
+          - not_null
+      - name: field_name
+        description: "Human-readable name of the field (e.g. Stage, Lost Reason)."
+        tests:
+          - not_null
+      - name: field_value_options
+        description: "JSON blob mapping option IDs to labels for fields with a fixed set of values."
