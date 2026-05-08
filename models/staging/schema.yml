@@ -94,3 +94,29 @@ models:
           - not_null
       - name: field_value_options
         description: "JSON blob mapping option IDs to labels for fields with a fixed set of values."
+
+  - name: stg_deal_changes
+    description: 
+      Staging model for Pipedrive deal changes. Clean 1-1 representation of the source
+      event log. Each row represents a single field change on a deal at a point in time.
+      Source of truth for deal lifecycle history including stage transitions, owner
+      assignments, deal creation, and lost reasons.
+    columns:
+      - name: deal_id
+        description: "Identifier of the deal that was changed."
+        tests:
+          - not_null
+      - name: change_time
+        description: "Timestamp when the field change occurred."
+        tests:
+          - not_null
+      - name: changed_field_key
+        description: "Key identifying which field was changed (e.g. stage_id, user_id, lost_reason)."
+        tests:
+          - not_null
+      - name: new_value
+        description: "The new value of the field after the change. 
+                      References stage_id, user_id, or lost_reason depending on the changed_field_key."
+        tests:
+          - not_null
+

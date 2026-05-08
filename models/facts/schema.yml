@@ -44,3 +44,39 @@ models:
         description: "Timestamp when the activity is due or was completed. Used as the incremental filter column."
         tests:
           - not_null
+
+  - name: fct_deal_changes
+    description: >
+      Fact table representing the complete event log of all field changes on Pipedrive deals.
+      Each row is an immutable business event capturing a single field mutation on a deal
+      at a point in time. Enriched with human-readable labels for stage, lost reason, and
+      user lookups. Incrementally loaded using append strategy since deal change events
+      are immutable once recorded. Source of truth for deal lifecycle history and
+      stage transition analysis.
+    columns:
+      - name: deal_id
+        description: "Identifier of the deal that was changed."
+        tests:
+          - not_null
+      - name: change_time
+        description: "Timestamp when the field change occurred. Used as the incremental filter column."
+        tests:
+          - not_null
+      - name: changed_field_key
+        description: "Key identifying which field was changed (e.g. stage_id, user_id, lost_reason, add_time)."
+        tests:
+          - not_null
+      - name: new_value
+        description: "Raw new value of the changed field. Contains stage_id, user_id, 
+                      lost_reason_id, or timestamp depending on changed_field_key."
+        tests:
+          - not_null
+      - name: stage_name
+        description: "Resolved stage name from stg_stages. Populated only when 
+                      changed_field_key = 'stage_id', null otherwise."
+      - name: lost_reason_label
+        description: "Resolved lost reason label from int_lost_reasons. 
+                      Populated only when changed_field_key = 'lost_reason', null otherwise."
+      - name: user_name
+        description: "Resolved user name from dim_users_latest. 
+                      Populated only when changed_field_key = 'user_id', null otherwise."
