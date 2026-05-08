@@ -55,3 +55,19 @@ models:
         description: "Timestamp when the activity is due or was completed."
         tests:
           - not_null
+
+  - name: stg_stages
+    description: 
+      Staging model for Pipedrive pipeline stages. Clean 1-1 representation of the source
+      table. Reference table mapping stage IDs to their human-readable names, representing
+      the ordered steps a deal moves through in the sales pipeline.
+    columns:
+      - name: stage_id
+        description: "Unique identifier of the pipeline stage."
+        tests:
+          - unique
+          - not_null
+      - name: stage_name
+        description: "Human-readable name of the pipeline stage (e.g. Lead Generation, Qualified Lead)."
+        tests:
+          - not_null
