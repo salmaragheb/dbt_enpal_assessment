@@ -1,0 +1,21 @@
+version: 2
+
+snapshots:
+  - name: snap_users
+    columns:
+      - name: dbt_scd_id
+        tests:
+          - unique
+          - not_null
+      - name: id
+        tests:
+          - not_null
+      - name: user_name
+        tests:
+          - not_null
+      - name: email
+        tests:
+          - not_null
+      - name: modified
+        tests:
+          - not_null

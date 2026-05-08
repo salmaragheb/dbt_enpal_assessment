@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: postgres_public
+    database: postgres
+    schema: public
+    tables:
+      - name: users
+        description: 
+          Pipedrive user accounts representing the sales team members. Used to resolve
+          user IDs in deal_changes and activity to rep names and emails.

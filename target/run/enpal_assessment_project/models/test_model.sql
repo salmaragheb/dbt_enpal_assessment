@@ -9,6 +9,6 @@
   
   (
     SELECT *
-FROM "postgres"."public"."activity"
+FROM "postgres"."public"."stages"
   );
   

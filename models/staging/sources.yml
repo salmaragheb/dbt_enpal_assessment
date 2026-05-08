@@ -1,0 +1,37 @@
+version: 2
+
+sources:
+  - name: postgres_public
+    database: postgres
+    schema: public
+    tables:
+      - name: deal_changes
+        description: 
+          Immutable event log recording every field change on a deal. Each row captures
+          a single field mutation - stage transitions, owner reassignments, deal creation,
+          lost reason set. Reconstruct deal state and history by replaying these events.
+
+      - name: activity
+        description: 
+          Log of all sales activities (calls, meetings) created in Pipedrive, each linked
+          to a deal. Tracks whether the activity was completed and when it was due.
+          Source for activity-based funnel steps (Sales Call 1, Sales Call 2).
+
+      - name: activity_types
+        description: 
+          Reference table defining the types of activities available in Pipedrive.
+          Maps internal type slugs (e.g. sc_2, meeting) to human-readable names.
+          Includes an active flag - inactive types are retired and should not appear
+          in reporting.
+
+      - name: stages
+        description: 
+          Reference table defining the ordered pipeline stages a deal can move through,
+          from Lead Generation to Renewal/Expansion. Maps stage IDs to stage names.
+
+      - name: fields
+        description: 
+          Metadata table describing all deal fields tracked in Pipedrive. For fields
+          with a fixed set of values (stage, lost reason), stores the full option list
+          as a JSON blob mapping IDs to labels.
+

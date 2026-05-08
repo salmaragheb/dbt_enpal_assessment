@@ -1,0 +1,1440 @@
+[0m17:56:34.816075 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb3f9eeaf10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb3e8805880>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb3e8805100>]}
+
+
+============================== 17:56:34.823946 | dc961a45-199a-4117-8cfe-0df29696d5f4 ==============================
+[0m17:56:34.823946 [info ] [MainThread]: Running with dbt=1.10.20
+[0m17:56:34.824806 [debug] [MainThread]: running dbt with arguments {'introspect': 'True', 'version_check': 'True', 'invocation_command': 'dbt run --select test_model', 'target_path': 'None', 'use_colors': 'True', 'cache_selected_only': 'False', 'no_print': 'None', 'empty': 'False', 'indirect_selection': 'eager', 'debug': 'False', 'log_cache_events': 'False', 'printer_width': '80', 'warn_error': 'None', 'fail_fast': 'False', 'log_format': 'default', 'static_parser': 'True', 'quiet': 'False', 'log_path': '/Users/salmaragheb/Desktop/cursor/dbt_enpal_assessment/logs', 'send_anonymous_usage_stats': 'True', 'profiles_dir': '/Users/salmaragheb/Desktop/cursor/dbt_enpal_assessment', 'partial_parse': 'True', 'use_experimental_parser': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'write_json': 'True'}
+[0m17:56:42.745238 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'dc961a45-199a-4117-8cfe-0df29696d5f4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb3e87ea370>]}
+[0m17:56:42.824058 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'dc961a45-199a-4117-8cfe-0df29696d5f4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb3fa6e73d0>]}
+[0m17:56:42.826221 [info ] [MainThread]: Registered adapter: postgres=1.9.1
+[0m17:56:43.480293 [debug] [MainThread]: checksum: a2dd717d56b7fa105aa967460f8408a71460d755763c8570e48c01c133187aea, vars: {}, profile: , target: , version: 1.10.20
+[0m17:56:43.605302 [info ] [MainThread]: Unable to do partial parsing because of a version mismatch
+[0m17:56:43.606032 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'dc961a45-199a-4117-8cfe-0df29696d5f4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb3fa220df0>]}
+[0m17:56:45.108705 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'dc961a45-199a-4117-8cfe-0df29696d5f4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb3fab859d0>]}
+[0m17:56:45.208929 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/salmaragheb/Desktop/cursor/dbt_enpal_assessment/target/manifest.json
+[0m17:56:45.211680 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/salmaragheb/Desktop/cursor/dbt_enpal_assessment/target/semantic_manifest.json
+[0m17:56:45.231947 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'dc961a45-199a-4117-8cfe-0df29696d5f4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb3fabbe7f0>]}
+[0m17:56:45.232618 [info ] [MainThread]: Found 1 model, 1 source, 447 macros
+[0m17:56:45.233105 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'dc961a45-199a-4117-8cfe-0df29696d5f4', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb3e8d4af70>]}
+[0m17:56:45.234304 [info ] [MainThread]: 
+[0m17:56:45.234810 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m17:56:45.235207 [info ] [MainThread]: 
+[0m17:56:45.235895 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m17:56:45.236957 [debug] [ThreadPool]: Acquiring new postgres connection 'list_postgres'
+[0m17:56:45.412980 [debug] [ThreadPool]: Using postgres connection "list_postgres"
+[0m17:56:45.413714 [debug] [ThreadPool]: On list_postgres: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "enpal_assessment_project", "target_name": "dev", "connection_name": "list_postgres"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m17:56:45.414186 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m17:56:46.797727 [debug] [ThreadPool]: Postgres adapter: Got a retryable error when attempting to open a postgres connection.
+1 attempts remaining. Retrying in 0 seconds.
+Error:
+connection to server at "localhost" (::1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+	Is the server running on that host and accepting TCP/IP connections?
+
+[0m17:56:46.801819 [debug] [ThreadPool]: Postgres adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "enpal_assessment_project", "target_name": "dev", "connection_name": "list_postgres"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m17:56:46.802316 [debug] [ThreadPool]: Postgres adapter: Rolling back transaction.
+[0m17:56:46.802818 [debug] [ThreadPool]: Postgres adapter: Error running SQL: macro list_schemas
+[0m17:56:46.803237 [debug] [ThreadPool]: Postgres adapter: Rolling back transaction.
+[0m17:56:46.803655 [debug] [ThreadPool]: On list_postgres: No close available on handle
+[0m17:56:46.804529 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m17:56:46.805006 [debug] [MainThread]: Connection 'list_postgres' was properly closed.
+[0m17:56:46.806176 [info ] [MainThread]: 
+[0m17:56:46.806681 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 1.57 seconds (1.57s).
+[0m17:56:46.807351 [error] [MainThread]: Encountered an error:
+Database Error
+  connection to server at "localhost" (::1), port 5432 failed: Connection refused
+  	Is the server running on that host and accepting TCP/IP connections?
+  connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused
+  	Is the server running on that host and accepting TCP/IP connections?
+  
+[0m17:56:46.988724 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 12.7094965, "process_in_blocks": "0", "process_kernel_time": 0.558983, "process_mem_max_rss": "115630080", "process_out_blocks": "0", "process_user_time": 3.824628}
+[0m17:56:46.989613 [debug] [MainThread]: Command `dbt run` failed at 17:56:46.989473 after 12.71 seconds
+[0m17:56:46.990150 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb3f9eeaf10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb3fabb8c70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb3faa7d760>]}
+[0m17:56:46.990681 [debug] [MainThread]: Flushing usage events
+[0m17:56:47.880935 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:19:00.367574 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe0e1d6af10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe0c83cd880>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe0c83cd100>]}
+
+
+============================== 18:19:00.376601 | 015b5087-d57d-4d7b-80c0-b1885d5fcb55 ==============================
+[0m18:19:00.376601 [info ] [MainThread]: Running with dbt=1.10.20
+[0m18:19:00.377765 [debug] [MainThread]: running dbt with arguments {'log_cache_events': 'False', 'target_path': 'None', 'use_colors': 'True', 'quiet': 'False', 'introspect': 'True', 'debug': 'False', 'printer_width': '80', 'indirect_selection': 'eager', 'warn_error': 'None', 'write_json': 'True', 'fail_fast': 'False', 'empty': 'False', 'log_path': '/Users/salmaragheb/Desktop/cursor/dbt_enpal_assessment/logs', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'cache_selected_only': 'False', 'invocation_command': 'dbt run --select test_model', 'log_format': 'default', 'static_parser': 'True', 'use_experimental_parser': 'False', 'profiles_dir': '/Users/salmaragheb/Desktop/cursor/dbt_enpal_assessment', 'version_check': 'True', 'partial_parse': 'True', 'no_print': 'None', 'send_anonymous_usage_stats': 'True'}
+[0m18:19:00.760685 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '015b5087-d57d-4d7b-80c0-b1885d5fcb55', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe0c80b1550>]}
+[0m18:19:00.839956 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '015b5087-d57d-4d7b-80c0-b1885d5fcb55', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe0d07442b0>]}
+[0m18:19:00.841464 [info ] [MainThread]: Registered adapter: postgres=1.9.1
+[0m18:19:01.004612 [debug] [MainThread]: checksum: a2dd717d56b7fa105aa967460f8408a71460d755763c8570e48c01c133187aea, vars: {}, profile: , target: , version: 1.10.20
+[0m18:19:01.180170 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m18:19:01.180760 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m18:19:01.230700 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '015b5087-d57d-4d7b-80c0-b1885d5fcb55', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe0e29a1130>]}
+[0m18:19:01.342521 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/salmaragheb/Desktop/cursor/dbt_enpal_assessment/target/manifest.json
+[0m18:19:01.345822 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/salmaragheb/Desktop/cursor/dbt_enpal_assessment/target/semantic_manifest.json
+[0m18:19:01.366844 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '015b5087-d57d-4d7b-80c0-b1885d5fcb55', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe0c8489460>]}
+[0m18:19:01.367561 [info ] [MainThread]: Found 1 model, 1 source, 447 macros
+[0m18:19:01.368105 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '015b5087-d57d-4d7b-80c0-b1885d5fcb55', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe0e27dd520>]}
+[0m18:19:01.369635 [info ] [MainThread]: 
+[0m18:19:01.370197 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m18:19:01.370612 [info ] [MainThread]: 
+[0m18:19:01.371296 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m18:19:01.373023 [debug] [ThreadPool]: Acquiring new postgres connection 'list_postgres'
+[0m18:19:01.487989 [debug] [ThreadPool]: Using postgres connection "list_postgres"
+[0m18:19:01.488644 [debug] [ThreadPool]: On list_postgres: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "enpal_assessment_project", "target_name": "dev", "connection_name": "list_postgres"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m18:19:01.489092 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:19:02.221061 [debug] [ThreadPool]: SQL status: SELECT 4 in 0.731 seconds
+[0m18:19:02.225552 [debug] [ThreadPool]: On list_postgres: Close
+[0m18:19:02.227096 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_postgres, now create_postgres_public_pipedrive_analytics)
+[0m18:19:02.228693 [debug] [ThreadPool]: Creating schema "database: "postgres"
+schema: "public_pipedrive_analytics"
+"
+[0m18:19:02.240353 [debug] [ThreadPool]: Using postgres connection "create_postgres_public_pipedrive_analytics"
+[0m18:19:02.241095 [debug] [ThreadPool]: On create_postgres_public_pipedrive_analytics: BEGIN
+[0m18:19:02.241709 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m18:19:02.253160 [debug] [ThreadPool]: SQL status: BEGIN in 0.011 seconds
+[0m18:19:02.253995 [debug] [ThreadPool]: Using postgres connection "create_postgres_public_pipedrive_analytics"
+[0m18:19:02.254671 [debug] [ThreadPool]: On create_postgres_public_pipedrive_analytics: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "enpal_assessment_project", "target_name": "dev", "connection_name": "create_postgres_public_pipedrive_analytics"} */
+create schema if not exists "public_pipedrive_analytics"
+[0m18:19:02.263861 [debug] [ThreadPool]: SQL status: CREATE SCHEMA in 0.009 seconds
+[0m18:19:02.265685 [debug] [ThreadPool]: On create_postgres_public_pipedrive_analytics: COMMIT
+[0m18:19:02.266389 [debug] [ThreadPool]: Using postgres connection "create_postgres_public_pipedrive_analytics"
+[0m18:19:02.266996 [debug] [ThreadPool]: On create_postgres_public_pipedrive_analytics: COMMIT
+[0m18:19:02.268516 [debug] [ThreadPool]: SQL status: COMMIT in 0.001 seconds
+[0m18:19:02.269174 [debug] [ThreadPool]: On create_postgres_public_pipedrive_analytics: Close
+[0m18:19:02.271183 [debug] [ThreadPool]: Acquiring new postgres connection 'list_postgres_public_pipedrive_analytics'
+[0m18:19:02.282811 [debug] [ThreadPool]: Using postgres connection "list_postgres_public_pipedrive_analytics"
+[0m18:19:02.283558 [debug] [ThreadPool]: On list_postgres_public_pipedrive_analytics: BEGIN
+[0m18:19:02.284101 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:19:02.293314 [debug] [ThreadPool]: SQL status: BEGIN in 0.009 seconds
+[0m18:19:02.293959 [debug] [ThreadPool]: Using postgres connection "list_postgres_public_pipedrive_analytics"
+[0m18:19:02.294484 [debug] [ThreadPool]: On list_postgres_public_pipedrive_analytics: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "enpal_assessment_project", "target_name": "dev", "connection_name": "list_postgres_public_pipedrive_analytics"} */
+select
+      'postgres' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public_pipedrive_analytics'
+    union all
+    select
+      'postgres' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public_pipedrive_analytics'
+    union all
+    select
+      'postgres' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public_pipedrive_analytics'
+  
+[0m18:19:02.321757 [debug] [ThreadPool]: SQL status: SELECT 0 in 0.027 seconds
+[0m18:19:02.324232 [debug] [ThreadPool]: On list_postgres_public_pipedrive_analytics: ROLLBACK
+[0m18:19:02.325274 [debug] [ThreadPool]: On list_postgres_public_pipedrive_analytics: Close
+[0m18:19:02.333574 [debug] [MainThread]: Using postgres connection "master"
+[0m18:19:02.334299 [debug] [MainThread]: On master: BEGIN
+[0m18:19:02.334870 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m18:19:02.343969 [debug] [MainThread]: SQL status: BEGIN in 0.009 seconds
+[0m18:19:02.344791 [debug] [MainThread]: Using postgres connection "master"
+[0m18:19:02.345519 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "enpal_assessment_project", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m18:19:02.356347 [debug] [MainThread]: SQL status: SELECT 0 in 0.010 seconds
+[0m18:19:02.358136 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '015b5087-d57d-4d7b-80c0-b1885d5fcb55', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe0c852c400>]}
+[0m18:19:02.358867 [debug] [MainThread]: On master: ROLLBACK
+[0m18:19:02.359612 [debug] [MainThread]: Using postgres connection "master"
+[0m18:19:02.360028 [debug] [MainThread]: On master: BEGIN
+[0m18:19:02.360768 [debug] [MainThread]: SQL status: BEGIN in 0.000 seconds
+[0m18:19:02.361176 [debug] [MainThread]: On master: COMMIT
+[0m18:19:02.361569 [debug] [MainThread]: Using postgres connection "master"
+[0m18:19:02.361958 [debug] [MainThread]: On master: COMMIT
+[0m18:19:02.362561 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m18:19:02.362982 [debug] [MainThread]: On master: Close
+[0m18:19:02.366576 [debug] [Thread-1  ]: Began running node model.enpal_assessment_project.test_model
+[0m18:19:02.367319 [info ] [Thread-1  ]: 1 of 1 START sql table model public_pipedrive_analytics.test_model ............. [RUN]
+[0m18:19:02.367949 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly create_postgres_public_pipedrive_analytics, now model.enpal_assessment_project.test_model)
+[0m18:19:02.368465 [debug] [Thread-1  ]: Began compiling node model.enpal_assessment_project.test_model
+[0m18:19:02.385558 [debug] [Thread-1  ]: Writing injected SQL for node "model.enpal_assessment_project.test_model"
+[0m18:19:02.388025 [debug] [Thread-1  ]: Began executing node model.enpal_assessment_project.test_model
+[0m18:19:02.494041 [debug] [Thread-1  ]: Writing runtime sql for node "model.enpal_assessment_project.test_model"
+[0m18:19:02.495395 [debug] [Thread-1  ]: Using postgres connection "model.enpal_assessment_project.test_model"
+[0m18:19:02.495981 [debug] [Thread-1  ]: On model.enpal_assessment_project.test_model: BEGIN
+[0m18:19:02.496473 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m18:19:02.502671 [debug] [Thread-1  ]: SQL status: BEGIN in 0.006 seconds
+[0m18:19:02.503210 [debug] [Thread-1  ]: Using postgres connection "model.enpal_assessment_project.test_model"
+[0m18:19:02.503714 [debug] [Thread-1  ]: On model.enpal_assessment_project.test_model: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "enpal_assessment_project", "target_name": "dev", "node_id": "model.enpal_assessment_project.test_model"} */
+
+  
+    
+
+  create  table "postgres"."public_pipedrive_analytics"."test_model__dbt_tmp"
+  
+  
+    as
+  
+  (
+    SELECT *
+FROM "postgres"."public"."activity"
+  );
+  
+[0m18:19:02.505541 [debug] [Thread-1  ]: Postgres adapter: Postgres error: relation "public.activity" does not exist
+LINE 13: FROM "postgres"."public"."activity"
+              ^
+
+[0m18:19:02.506051 [debug] [Thread-1  ]: On model.enpal_assessment_project.test_model: ROLLBACK
+[0m18:19:02.506783 [debug] [Thread-1  ]: On model.enpal_assessment_project.test_model: Close
+[0m18:19:02.513637 [debug] [Thread-1  ]: Database Error in model test_model (models/test_model.sql)
+  relation "public.activity" does not exist
+  LINE 13: FROM "postgres"."public"."activity"
+                ^
+  compiled code at target/run/enpal_assessment_project/models/test_model.sql
+[0m18:19:02.516282 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '015b5087-d57d-4d7b-80c0-b1885d5fcb55', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe0c8382610>]}
+[0m18:19:02.517176 [error] [Thread-1  ]: 1 of 1 ERROR creating sql table model public_pipedrive_analytics.test_model .... [[31mERROR[0m in 0.15s]
+[0m18:19:02.518314 [debug] [Thread-1  ]: Finished running node model.enpal_assessment_project.test_model
+[0m18:19:02.519016 [debug] [Thread-4  ]: Marking all children of 'model.enpal_assessment_project.test_model' to be skipped because of status 'error'.  Reason: Database Error in model test_model (models/test_model.sql)
+  relation "public.activity" does not exist
+  LINE 13: FROM "postgres"."public"."activity"
+                ^
+  compiled code at target/run/enpal_assessment_project/models/test_model.sql.
+[0m18:19:02.520884 [debug] [MainThread]: Using postgres connection "master"
+[0m18:19:02.521343 [debug] [MainThread]: On master: BEGIN
+[0m18:19:02.521743 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m18:19:02.527304 [debug] [MainThread]: SQL status: BEGIN in 0.005 seconds
+[0m18:19:02.527894 [debug] [MainThread]: On master: COMMIT
+[0m18:19:02.528333 [debug] [MainThread]: Using postgres connection "master"
+[0m18:19:02.528740 [debug] [MainThread]: On master: COMMIT
+[0m18:19:02.529271 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m18:19:02.529774 [debug] [MainThread]: On master: Close
+[0m18:19:02.530348 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:19:02.530742 [debug] [MainThread]: Connection 'model.enpal_assessment_project.test_model' was properly closed.
+[0m18:19:02.531116 [debug] [MainThread]: Connection 'list_postgres_public_pipedrive_analytics' was properly closed.
+[0m18:19:02.531552 [info ] [MainThread]: 
+[0m18:19:02.531996 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 1.16 seconds (1.16s).
+[0m18:19:02.532878 [debug] [MainThread]: Command end result
+[0m18:19:02.562538 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/salmaragheb/Desktop/cursor/dbt_enpal_assessment/target/manifest.json
+[0m18:19:02.566172 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/salmaragheb/Desktop/cursor/dbt_enpal_assessment/target/semantic_manifest.json
+[0m18:19:02.574746 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/salmaragheb/Desktop/cursor/dbt_enpal_assessment/target/run_results.json
+[0m18:19:02.575258 [info ] [MainThread]: 
+[0m18:19:02.575797 [info ] [MainThread]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m18:19:02.576280 [info ] [MainThread]: 
+[0m18:19:02.576943 [error] [MainThread]: [31mFailure in model test_model (models/test_model.sql)[0m
+[0m18:19:02.577493 [error] [MainThread]:   Database Error in model test_model (models/test_model.sql)
+  relation "public.activity" does not exist
+  LINE 13: FROM "postgres"."public"."activity"
+                ^
+  compiled code at target/run/enpal_assessment_project/models/test_model.sql
+[0m18:19:02.577934 [info ] [MainThread]: 
+[0m18:19:02.578431 [info ] [MainThread]:   compiled code at target/compiled/enpal_assessment_project/models/test_model.sql
+[0m18:19:02.578850 [info ] [MainThread]: 
+[0m18:19:02.579297 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 NO-OP=0 TOTAL=1
+[0m18:19:02.583813 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": false, "command_wall_clock_time": 2.4755228, "process_in_blocks": "0", "process_kernel_time": 1.107936, "process_mem_max_rss": "112644096", "process_out_blocks": "0", "process_user_time": 2.652437}
+[0m18:19:02.584580 [debug] [MainThread]: Command `dbt run` failed at 18:19:02.584459 after 2.48 seconds
+[0m18:19:02.585119 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe0e1d6af10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe0c01846a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fe0d06e31c0>]}
+[0m18:19:02.585654 [debug] [MainThread]: Flushing usage events
+[0m18:19:03.779496 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:33:22.667214 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fea0175af40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fea1005c490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fea1005c4f0>]}
+
+
+============================== 18:33:22.675723 | 2d7280f5-cfc4-4b2b-bfc4-d59a602885c5 ==============================
+[0m18:33:22.675723 [info ] [MainThread]: Running with dbt=1.10.20
+[0m18:33:22.676617 [debug] [MainThread]: running dbt with arguments {'partial_parse': 'True', 'indirect_selection': 'eager', 'send_anonymous_usage_stats': 'True', 'version_check': 'True', 'log_path': '/Users/salmaragheb/Desktop/cursor/dbt_enpal_assessment/logs', 'invocation_command': 'dbt run --select test_model', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'profiles_dir': '/Users/salmaragheb/Desktop/cursor/dbt_enpal_assessment', 'target_path': 'None', 'write_json': 'True', 'empty': 'False', 'no_print': 'None', 'fail_fast': 'False', 'debug': 'False', 'quiet': 'False', 'log_cache_events': 'False', 'log_format': 'default', 'use_experimental_parser': 'False', 'static_parser': 'True', 'printer_width': '80', 'cache_selected_only': 'False', 'use_colors': 'True', 'warn_error': 'None', 'introspect': 'True'}
+[0m18:33:23.008497 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '2d7280f5-cfc4-4b2b-bfc4-d59a602885c5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fea00ddbc40>]}
+[0m18:33:23.085721 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '2d7280f5-cfc4-4b2b-bfc4-d59a602885c5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fea01fdcd00>]}
+[0m18:33:23.087810 [info ] [MainThread]: Registered adapter: postgres=1.9.1
+[0m18:33:23.255402 [debug] [MainThread]: checksum: a2dd717d56b7fa105aa967460f8408a71460d755763c8570e48c01c133187aea, vars: {}, profile: , target: , version: 1.10.20
+[0m18:33:23.428070 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m18:33:23.428649 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m18:33:23.480855 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '2d7280f5-cfc4-4b2b-bfc4-d59a602885c5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fea022c8130>]}
+[0m18:33:23.590720 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/salmaragheb/Desktop/cursor/dbt_enpal_assessment/target/manifest.json
+[0m18:33:23.594177 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/salmaragheb/Desktop/cursor/dbt_enpal_assessment/target/semantic_manifest.json
+[0m18:33:23.615371 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '2d7280f5-cfc4-4b2b-bfc4-d59a602885c5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fea0224f4c0>]}
+[0m18:33:23.616068 [info ] [MainThread]: Found 1 model, 1 source, 447 macros
+[0m18:33:23.616593 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '2d7280f5-cfc4-4b2b-bfc4-d59a602885c5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fea022b9df0>]}
+[0m18:33:23.617959 [info ] [MainThread]: 
+[0m18:33:23.618474 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m18:33:23.618882 [info ] [MainThread]: 
+[0m18:33:23.619541 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m18:33:23.621152 [debug] [ThreadPool]: Acquiring new postgres connection 'list_postgres'
+[0m18:33:23.731805 [debug] [ThreadPool]: Using postgres connection "list_postgres"
+[0m18:33:23.732423 [debug] [ThreadPool]: On list_postgres: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "enpal_assessment_project", "target_name": "dev", "connection_name": "list_postgres"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m18:33:23.732880 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:33:24.066323 [debug] [ThreadPool]: SQL status: SELECT 5 in 0.333 seconds
+[0m18:33:24.068250 [debug] [ThreadPool]: On list_postgres: Close
+[0m18:33:24.069649 [debug] [ThreadPool]: Acquiring new postgres connection 'list_postgres_public_pipedrive_analytics'
+[0m18:33:24.077762 [debug] [ThreadPool]: Using postgres connection "list_postgres_public_pipedrive_analytics"
+[0m18:33:24.078235 [debug] [ThreadPool]: On list_postgres_public_pipedrive_analytics: BEGIN
+[0m18:33:24.078635 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:33:24.088578 [debug] [ThreadPool]: SQL status: BEGIN in 0.010 seconds
+[0m18:33:24.089076 [debug] [ThreadPool]: Using postgres connection "list_postgres_public_pipedrive_analytics"
+[0m18:33:24.089549 [debug] [ThreadPool]: On list_postgres_public_pipedrive_analytics: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "enpal_assessment_project", "target_name": "dev", "connection_name": "list_postgres_public_pipedrive_analytics"} */
+select
+      'postgres' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public_pipedrive_analytics'
+    union all
+    select
+      'postgres' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public_pipedrive_analytics'
+    union all
+    select
+      'postgres' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public_pipedrive_analytics'
+  
+[0m18:33:24.101758 [debug] [ThreadPool]: SQL status: SELECT 0 in 0.012 seconds
+[0m18:33:24.103271 [debug] [ThreadPool]: On list_postgres_public_pipedrive_analytics: ROLLBACK
+[0m18:33:24.103991 [debug] [ThreadPool]: On list_postgres_public_pipedrive_analytics: Close
+[0m18:33:24.109346 [debug] [MainThread]: Using postgres connection "master"
+[0m18:33:24.109804 [debug] [MainThread]: On master: BEGIN
+[0m18:33:24.110197 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m18:33:24.116773 [debug] [MainThread]: SQL status: BEGIN in 0.007 seconds
+[0m18:33:24.117220 [debug] [MainThread]: Using postgres connection "master"
+[0m18:33:24.117768 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "enpal_assessment_project", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m18:33:24.127044 [debug] [MainThread]: SQL status: SELECT 0 in 0.009 seconds
+[0m18:33:24.128428 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '2d7280f5-cfc4-4b2b-bfc4-d59a602885c5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fea0237b190>]}
+[0m18:33:24.129038 [debug] [MainThread]: On master: ROLLBACK
+[0m18:33:24.129661 [debug] [MainThread]: Using postgres connection "master"
+[0m18:33:24.130063 [debug] [MainThread]: On master: BEGIN
+[0m18:33:24.130789 [debug] [MainThread]: SQL status: BEGIN in 0.000 seconds
+[0m18:33:24.131206 [debug] [MainThread]: On master: COMMIT
+[0m18:33:24.131593 [debug] [MainThread]: Using postgres connection "master"
+[0m18:33:24.131974 [debug] [MainThread]: On master: COMMIT
+[0m18:33:24.132530 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m18:33:24.132938 [debug] [MainThread]: On master: Close
+[0m18:33:24.136166 [debug] [Thread-1  ]: Began running node model.enpal_assessment_project.test_model
+[0m18:33:24.136893 [info ] [Thread-1  ]: 1 of 1 START sql table model public_pipedrive_analytics.test_model ............. [RUN]
+[0m18:33:24.137491 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_postgres, now model.enpal_assessment_project.test_model)
+[0m18:33:24.137990 [debug] [Thread-1  ]: Began compiling node model.enpal_assessment_project.test_model
+[0m18:33:24.150007 [debug] [Thread-1  ]: Writing injected SQL for node "model.enpal_assessment_project.test_model"
+[0m18:33:24.151496 [debug] [Thread-1  ]: Began executing node model.enpal_assessment_project.test_model
+[0m18:33:24.304198 [debug] [Thread-1  ]: Writing runtime sql for node "model.enpal_assessment_project.test_model"
+[0m18:33:24.306197 [debug] [Thread-1  ]: Using postgres connection "model.enpal_assessment_project.test_model"
+[0m18:33:24.306760 [debug] [Thread-1  ]: On model.enpal_assessment_project.test_model: BEGIN
+[0m18:33:24.307247 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m18:33:24.323464 [debug] [Thread-1  ]: SQL status: BEGIN in 0.016 seconds
+[0m18:33:24.326230 [debug] [Thread-1  ]: Using postgres connection "model.enpal_assessment_project.test_model"
+[0m18:33:24.327769 [debug] [Thread-1  ]: On model.enpal_assessment_project.test_model: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "enpal_assessment_project", "target_name": "dev", "node_id": "model.enpal_assessment_project.test_model"} */
+
+  
+    
+
+  create  table "postgres"."public_pipedrive_analytics"."test_model__dbt_tmp"
+  
+  
+    as
+  
+  (
+    SELECT *
+FROM "postgres"."public"."activity"
+  );
+  
+[0m18:33:24.337718 [debug] [Thread-1  ]: SQL status: SELECT 4579 in 0.009 seconds
+[0m18:33:24.353703 [debug] [Thread-1  ]: Using postgres connection "model.enpal_assessment_project.test_model"
+[0m18:33:24.354589 [debug] [Thread-1  ]: On model.enpal_assessment_project.test_model: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "enpal_assessment_project", "target_name": "dev", "node_id": "model.enpal_assessment_project.test_model"} */
+alter table "postgres"."public_pipedrive_analytics"."test_model__dbt_tmp" rename to "test_model"
+[0m18:33:24.399101 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.044 seconds
+[0m18:33:24.417806 [debug] [Thread-1  ]: On model.enpal_assessment_project.test_model: COMMIT
+[0m18:33:24.418458 [debug] [Thread-1  ]: Using postgres connection "model.enpal_assessment_project.test_model"
+[0m18:33:24.418957 [debug] [Thread-1  ]: On model.enpal_assessment_project.test_model: COMMIT
+[0m18:33:24.430190 [debug] [Thread-1  ]: SQL status: COMMIT in 0.011 seconds
+[0m18:33:24.439082 [debug] [Thread-1  ]: Applying DROP to: "postgres"."public_pipedrive_analytics"."test_model__dbt_backup"
+[0m18:33:24.445178 [debug] [Thread-1  ]: Using postgres connection "model.enpal_assessment_project.test_model"
+[0m18:33:24.446737 [debug] [Thread-1  ]: On model.enpal_assessment_project.test_model: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "enpal_assessment_project", "target_name": "dev", "node_id": "model.enpal_assessment_project.test_model"} */
+drop table if exists "postgres"."public_pipedrive_analytics"."test_model__dbt_backup" cascade
+[0m18:33:24.447743 [debug] [Thread-1  ]: SQL status: DROP TABLE in 0.000 seconds
+[0m18:33:24.451144 [debug] [Thread-1  ]: On model.enpal_assessment_project.test_model: Close
+[0m18:33:24.453562 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '2d7280f5-cfc4-4b2b-bfc4-d59a602885c5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fea0240a220>]}
+[0m18:33:24.454445 [info ] [Thread-1  ]: 1 of 1 OK created sql table model public_pipedrive_analytics.test_model ........ [[32mSELECT 4579[0m in 0.31s]
+[0m18:33:24.455236 [debug] [Thread-1  ]: Finished running node model.enpal_assessment_project.test_model
+[0m18:33:24.456752 [debug] [MainThread]: Using postgres connection "master"
+[0m18:33:24.457224 [debug] [MainThread]: On master: BEGIN
+[0m18:33:24.457628 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m18:33:24.463991 [debug] [MainThread]: SQL status: BEGIN in 0.006 seconds
+[0m18:33:24.464548 [debug] [MainThread]: On master: COMMIT
+[0m18:33:24.465501 [debug] [MainThread]: Using postgres connection "master"
+[0m18:33:24.466053 [debug] [MainThread]: On master: COMMIT
+[0m18:33:24.466639 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m18:33:24.467062 [debug] [MainThread]: On master: Close
+[0m18:33:24.467621 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:33:24.468002 [debug] [MainThread]: Connection 'model.enpal_assessment_project.test_model' was properly closed.
+[0m18:33:24.468365 [debug] [MainThread]: Connection 'list_postgres_public_pipedrive_analytics' was properly closed.
+[0m18:33:24.468783 [info ] [MainThread]: 
+[0m18:33:24.469220 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 0.85 seconds (0.85s).
+[0m18:33:24.470066 [debug] [MainThread]: Command end result
+[0m18:33:24.502570 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/salmaragheb/Desktop/cursor/dbt_enpal_assessment/target/manifest.json
+[0m18:33:24.504749 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/salmaragheb/Desktop/cursor/dbt_enpal_assessment/target/semantic_manifest.json
+[0m18:33:24.514464 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/salmaragheb/Desktop/cursor/dbt_enpal_assessment/target/run_results.json
+[0m18:33:24.515008 [info ] [MainThread]: 
+[0m18:33:24.515649 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m18:33:24.516171 [info ] [MainThread]: 
+[0m18:33:24.516654 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
+[0m18:33:24.521461 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 2.017325, "process_in_blocks": "0", "process_kernel_time": 1.094599, "process_mem_max_rss": "114597888", "process_out_blocks": "0", "process_user_time": 2.658863}
+[0m18:33:24.522791 [debug] [MainThread]: Command `dbt run` succeeded at 18:33:24.522616 after 2.02 seconds
+[0m18:33:24.523393 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fea0175af40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fea01395d60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fea0187cfa0>]}
+[0m18:33:24.523955 [debug] [MainThread]: Flushing usage events
+[0m18:33:25.588983 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:54:12.423041 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8aa0f0aee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8aa1bad1c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8aa1bad100>]}
+
+
+============================== 18:54:12.435041 | 4efa0939-3c2f-4483-ae5c-a4e5b44ec5e7 ==============================
+[0m18:54:12.435041 [info ] [MainThread]: Running with dbt=1.10.20
+[0m18:54:12.436026 [debug] [MainThread]: running dbt with arguments {'log_cache_events': 'False', 'invocation_command': 'dbt run --select test_model', 'send_anonymous_usage_stats': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'indirect_selection': 'eager', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'debug': 'False', 'printer_width': '80', 'write_json': 'True', 'log_path': '/Users/salmaragheb/Desktop/cursor/dbt_enpal_assessment/logs', 'use_colors': 'True', 'log_format': 'default', 'profiles_dir': '/Users/salmaragheb/Desktop/cursor/dbt_enpal_assessment', 'empty': 'False', 'warn_error': 'None', 'target_path': 'None', 'version_check': 'True', 'static_parser': 'True', 'fail_fast': 'False', 'quiet': 'False', 'use_experimental_parser': 'False', 'introspect': 'True', 'no_print': 'None'}
+[0m18:54:13.225252 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '4efa0939-3c2f-4483-ae5c-a4e5b44ec5e7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8aa0aa0e20>]}
+[0m18:54:13.379238 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '4efa0939-3c2f-4483-ae5c-a4e5b44ec5e7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8a802d5d90>]}
+[0m18:54:13.381285 [info ] [MainThread]: Registered adapter: postgres=1.9.1
+[0m18:54:13.662386 [debug] [MainThread]: checksum: a2dd717d56b7fa105aa967460f8408a71460d755763c8570e48c01c133187aea, vars: {}, profile: , target: , version: 1.10.20
+[0m18:54:13.913513 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m18:54:13.914180 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m18:54:13.968669 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '4efa0939-3c2f-4483-ae5c-a4e5b44ec5e7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8a885f1130>]}
+[0m18:54:14.081131 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/salmaragheb/Desktop/cursor/dbt_enpal_assessment/target/manifest.json
+[0m18:54:14.084540 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/salmaragheb/Desktop/cursor/dbt_enpal_assessment/target/semantic_manifest.json
+[0m18:54:14.107248 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '4efa0939-3c2f-4483-ae5c-a4e5b44ec5e7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8a88510400>]}
+[0m18:54:14.108218 [info ] [MainThread]: Found 1 model, 1 source, 447 macros
+[0m18:54:14.109138 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '4efa0939-3c2f-4483-ae5c-a4e5b44ec5e7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8a885e4040>]}
+[0m18:54:14.134561 [info ] [MainThread]: 
+[0m18:54:14.192865 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m18:54:14.215264 [info ] [MainThread]: 
+[0m18:54:14.233857 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m18:54:14.249164 [debug] [ThreadPool]: Acquiring new postgres connection 'list_postgres'
+[0m18:54:14.407397 [debug] [ThreadPool]: Using postgres connection "list_postgres"
+[0m18:54:14.408237 [debug] [ThreadPool]: On list_postgres: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "enpal_assessment_project", "target_name": "dev", "connection_name": "list_postgres"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m18:54:14.408790 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:54:15.022214 [debug] [ThreadPool]: SQL status: SELECT 5 in 0.613 seconds
+[0m18:54:15.024971 [debug] [ThreadPool]: On list_postgres: Close
+[0m18:54:15.027332 [debug] [ThreadPool]: Acquiring new postgres connection 'list_postgres_public_pipedrive_analytics'
+[0m18:54:15.039181 [debug] [ThreadPool]: Using postgres connection "list_postgres_public_pipedrive_analytics"
+[0m18:54:15.039843 [debug] [ThreadPool]: On list_postgres_public_pipedrive_analytics: BEGIN
+[0m18:54:15.040267 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:54:15.066694 [debug] [ThreadPool]: SQL status: BEGIN in 0.026 seconds
+[0m18:54:15.067904 [debug] [ThreadPool]: Using postgres connection "list_postgres_public_pipedrive_analytics"
+[0m18:54:15.068536 [debug] [ThreadPool]: On list_postgres_public_pipedrive_analytics: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "enpal_assessment_project", "target_name": "dev", "connection_name": "list_postgres_public_pipedrive_analytics"} */
+select
+      'postgres' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public_pipedrive_analytics'
+    union all
+    select
+      'postgres' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public_pipedrive_analytics'
+    union all
+    select
+      'postgres' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public_pipedrive_analytics'
+  
+[0m18:54:15.098187 [debug] [ThreadPool]: SQL status: SELECT 1 in 0.029 seconds
+[0m18:54:15.100461 [debug] [ThreadPool]: On list_postgres_public_pipedrive_analytics: ROLLBACK
+[0m18:54:15.101419 [debug] [ThreadPool]: On list_postgres_public_pipedrive_analytics: Close
+[0m18:54:15.107845 [debug] [MainThread]: Using postgres connection "master"
+[0m18:54:15.108452 [debug] [MainThread]: On master: BEGIN
+[0m18:54:15.108882 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m18:54:15.115089 [debug] [MainThread]: SQL status: BEGIN in 0.006 seconds
+[0m18:54:15.115675 [debug] [MainThread]: Using postgres connection "master"
+[0m18:54:15.116253 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "enpal_assessment_project", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m18:54:15.157467 [debug] [MainThread]: SQL status: SELECT 0 in 0.041 seconds
+[0m18:54:15.159423 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '4efa0939-3c2f-4483-ae5c-a4e5b44ec5e7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8a80c0dd30>]}
+[0m18:54:15.160346 [debug] [MainThread]: On master: ROLLBACK
+[0m18:54:15.161033 [debug] [MainThread]: Using postgres connection "master"
+[0m18:54:15.161508 [debug] [MainThread]: On master: BEGIN
+[0m18:54:15.162254 [debug] [MainThread]: SQL status: BEGIN in 0.000 seconds
+[0m18:54:15.162688 [debug] [MainThread]: On master: COMMIT
+[0m18:54:15.163191 [debug] [MainThread]: Using postgres connection "master"
+[0m18:54:15.163772 [debug] [MainThread]: On master: COMMIT
+[0m18:54:15.164425 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m18:54:15.165067 [debug] [MainThread]: On master: Close
+[0m18:54:15.173264 [debug] [Thread-1  ]: Began running node model.enpal_assessment_project.test_model
+[0m18:54:15.174150 [info ] [Thread-1  ]: 1 of 1 START sql table model public_pipedrive_analytics.test_model ............. [RUN]
+[0m18:54:15.174881 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_postgres, now model.enpal_assessment_project.test_model)
+[0m18:54:15.175448 [debug] [Thread-1  ]: Began compiling node model.enpal_assessment_project.test_model
+[0m18:54:15.189108 [debug] [Thread-1  ]: Writing injected SQL for node "model.enpal_assessment_project.test_model"
+[0m18:54:15.195402 [debug] [Thread-1  ]: Began executing node model.enpal_assessment_project.test_model
+[0m18:54:15.337968 [debug] [Thread-1  ]: Writing runtime sql for node "model.enpal_assessment_project.test_model"
+[0m18:54:15.341668 [debug] [Thread-1  ]: Using postgres connection "model.enpal_assessment_project.test_model"
+[0m18:54:15.342436 [debug] [Thread-1  ]: On model.enpal_assessment_project.test_model: BEGIN
+[0m18:54:15.343362 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m18:54:15.361024 [debug] [Thread-1  ]: SQL status: BEGIN in 0.017 seconds
+[0m18:54:15.362834 [debug] [Thread-1  ]: Using postgres connection "model.enpal_assessment_project.test_model"
+[0m18:54:15.364617 [debug] [Thread-1  ]: On model.enpal_assessment_project.test_model: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "enpal_assessment_project", "target_name": "dev", "node_id": "model.enpal_assessment_project.test_model"} */
+
+  
+    
+
+  create  table "postgres"."public_pipedrive_analytics"."test_model__dbt_tmp"
+  
+  
+    as
+  
+  (
+    SELECT *
+FROM "postgres"."public"."activity"
+  );
+  
+[0m18:54:15.781063 [debug] [Thread-1  ]: SQL status: SELECT 4579 in 0.415 seconds
+[0m18:54:15.796514 [debug] [Thread-1  ]: Using postgres connection "model.enpal_assessment_project.test_model"
+[0m18:54:15.797181 [debug] [Thread-1  ]: On model.enpal_assessment_project.test_model: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "enpal_assessment_project", "target_name": "dev", "node_id": "model.enpal_assessment_project.test_model"} */
+alter table "postgres"."public_pipedrive_analytics"."test_model" rename to "test_model__dbt_backup"
+[0m18:54:15.798597 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.001 seconds
+[0m18:54:15.803629 [debug] [Thread-1  ]: Using postgres connection "model.enpal_assessment_project.test_model"
+[0m18:54:15.804308 [debug] [Thread-1  ]: On model.enpal_assessment_project.test_model: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "enpal_assessment_project", "target_name": "dev", "node_id": "model.enpal_assessment_project.test_model"} */
+alter table "postgres"."public_pipedrive_analytics"."test_model__dbt_tmp" rename to "test_model"
+[0m18:54:15.806389 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.001 seconds
+[0m18:54:15.834000 [debug] [Thread-1  ]: On model.enpal_assessment_project.test_model: COMMIT
+[0m18:54:15.834773 [debug] [Thread-1  ]: Using postgres connection "model.enpal_assessment_project.test_model"
+[0m18:54:15.835297 [debug] [Thread-1  ]: On model.enpal_assessment_project.test_model: COMMIT
+[0m18:54:15.836872 [debug] [Thread-1  ]: SQL status: COMMIT in 0.001 seconds
+[0m18:54:15.846540 [debug] [Thread-1  ]: Applying DROP to: "postgres"."public_pipedrive_analytics"."test_model__dbt_backup"
+[0m18:54:15.852689 [debug] [Thread-1  ]: Using postgres connection "model.enpal_assessment_project.test_model"
+[0m18:54:15.853359 [debug] [Thread-1  ]: On model.enpal_assessment_project.test_model: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "enpal_assessment_project", "target_name": "dev", "node_id": "model.enpal_assessment_project.test_model"} */
+drop table if exists "postgres"."public_pipedrive_analytics"."test_model__dbt_backup" cascade
+[0m18:54:15.928490 [debug] [Thread-1  ]: SQL status: DROP TABLE in 0.074 seconds
+[0m18:54:15.932115 [debug] [Thread-1  ]: On model.enpal_assessment_project.test_model: Close
+[0m18:54:15.934677 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '4efa0939-3c2f-4483-ae5c-a4e5b44ec5e7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8a88795c70>]}
+[0m18:54:15.935613 [info ] [Thread-1  ]: 1 of 1 OK created sql table model public_pipedrive_analytics.test_model ........ [[32mSELECT 4579[0m in 0.76s]
+[0m18:54:15.936426 [debug] [Thread-1  ]: Finished running node model.enpal_assessment_project.test_model
+[0m18:54:15.937901 [debug] [MainThread]: Using postgres connection "master"
+[0m18:54:15.938384 [debug] [MainThread]: On master: BEGIN
+[0m18:54:15.938799 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m18:54:15.945691 [debug] [MainThread]: SQL status: BEGIN in 0.007 seconds
+[0m18:54:15.946190 [debug] [MainThread]: On master: COMMIT
+[0m18:54:15.946611 [debug] [MainThread]: Using postgres connection "master"
+[0m18:54:15.947008 [debug] [MainThread]: On master: COMMIT
+[0m18:54:15.947620 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m18:54:15.948040 [debug] [MainThread]: On master: Close
+[0m18:54:15.948569 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:54:15.948959 [debug] [MainThread]: Connection 'model.enpal_assessment_project.test_model' was properly closed.
+[0m18:54:15.949325 [debug] [MainThread]: Connection 'list_postgres_public_pipedrive_analytics' was properly closed.
+[0m18:54:15.949791 [info ] [MainThread]: 
+[0m18:54:15.950239 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 1.73 seconds (1.73s).
+[0m18:54:15.951114 [debug] [MainThread]: Command end result
+[0m18:54:15.979468 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/salmaragheb/Desktop/cursor/dbt_enpal_assessment/target/manifest.json
+[0m18:54:15.981636 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/salmaragheb/Desktop/cursor/dbt_enpal_assessment/target/semantic_manifest.json
+[0m18:54:15.994421 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/salmaragheb/Desktop/cursor/dbt_enpal_assessment/target/run_results.json
+[0m18:54:15.994979 [info ] [MainThread]: 
+[0m18:54:15.995558 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m18:54:15.995992 [info ] [MainThread]: 
+[0m18:54:15.996581 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
+[0m18:54:16.010679 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 3.7620592, "process_in_blocks": "0", "process_kernel_time": 1.371093, "process_mem_max_rss": "106434560", "process_out_blocks": "0", "process_user_time": 2.988968}
+[0m18:54:16.011648 [debug] [MainThread]: Command `dbt run` succeeded at 18:54:16.011511 after 3.76 seconds
+[0m18:54:16.012265 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8aa0f0aee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8a80b78370>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8a80ce66a0>]}
+[0m18:54:16.012853 [debug] [MainThread]: Flushing usage events
+[0m18:54:17.176832 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:23:17.725519 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f93f8232f10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f942858d880>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f942858d100>]}
+
+
+============================== 14:23:17.733691 | b5634fa3-d6dd-4f54-a14e-b6ca9707cc2c ==============================
+[0m14:23:17.733691 [info ] [MainThread]: Running with dbt=1.10.20
+[0m14:23:17.734557 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'static_parser': 'True', 'invocation_command': 'dbt run --select test_model', 'indirect_selection': 'eager', 'warn_error': 'None', 'printer_width': '80', 'log_cache_events': 'False', 'log_path': '/Users/salmaragheb/Desktop/cursor/dbt_enpal_assessment/logs', 'empty': 'False', 'profiles_dir': '/Users/salmaragheb/Desktop/cursor/dbt_enpal_assessment', 'send_anonymous_usage_stats': 'True', 'no_print': 'None', 'cache_selected_only': 'False', 'write_json': 'True', 'use_experimental_parser': 'False', 'introspect': 'True', 'use_colors': 'True', 'log_format': 'default', 'target_path': 'None', 'fail_fast': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'debug': 'False', 'partial_parse': 'True', 'quiet': 'False'}
+[0m14:23:18.520712 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'b5634fa3-d6dd-4f54-a14e-b6ca9707cc2c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9428572370>]}
+[0m14:23:18.599152 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'b5634fa3-d6dd-4f54-a14e-b6ca9707cc2c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f9419d3e3d0>]}
+[0m14:23:18.601360 [info ] [MainThread]: Registered adapter: postgres=1.9.1
+[0m14:23:18.764233 [debug] [MainThread]: checksum: a2dd717d56b7fa105aa967460f8408a71460d755763c8570e48c01c133187aea, vars: {}, profile: , target: , version: 1.10.20
+[0m14:23:18.944350 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 7 files added, 2 files changed.
+[0m14:23:18.945175 [debug] [MainThread]: Partial parsing: added file: enpal_assessment_project://models/staging/stg_activity.sql
+[0m14:23:18.945716 [debug] [MainThread]: Partial parsing: added file: enpal_assessment_project://models/staging/schema.yml
+[0m14:23:18.946188 [debug] [MainThread]: Partial parsing: added file: enpal_assessment_project://models/staging/stg_users.sql
+[0m14:23:18.946626 [debug] [MainThread]: Partial parsing: added file: enpal_assessment_project://models/staging/stg_deal_changes.sql
+[0m14:23:18.947068 [debug] [MainThread]: Partial parsing: added file: enpal_assessment_project://models/staging/stg_fields.sql
+[0m14:23:18.947494 [debug] [MainThread]: Partial parsing: added file: enpal_assessment_project://models/staging/stg_stages.sql
+[0m14:23:18.947909 [debug] [MainThread]: Partial parsing: added file: enpal_assessment_project://models/staging/stg_activity_types.sql
+[0m14:23:18.948594 [debug] [MainThread]: Partial parsing: updated file: enpal_assessment_project://models/sources.yml
+[0m14:23:18.949070 [debug] [MainThread]: Partial parsing: updated file: enpal_assessment_project://models/test_model.sql
+[0m14:23:19.490749 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'b5634fa3-d6dd-4f54-a14e-b6ca9707cc2c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f94286fdac0>]}
+[0m14:23:19.594012 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/salmaragheb/Desktop/cursor/dbt_enpal_assessment/target/manifest.json
+[0m14:23:19.597416 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/salmaragheb/Desktop/cursor/dbt_enpal_assessment/target/semantic_manifest.json
+[0m14:23:19.620014 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'b5634fa3-d6dd-4f54-a14e-b6ca9707cc2c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f940945b220>]}
+[0m14:23:19.620751 [info ] [MainThread]: Found 7 models, 6 sources, 447 macros
+[0m14:23:19.621248 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b5634fa3-d6dd-4f54-a14e-b6ca9707cc2c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f94084422e0>]}
+[0m14:23:19.622643 [info ] [MainThread]: 
+[0m14:23:19.623133 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m14:23:19.623537 [info ] [MainThread]: 
+[0m14:23:19.624163 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m14:23:19.625238 [debug] [ThreadPool]: Acquiring new postgres connection 'list_postgres'
+[0m14:23:19.807470 [debug] [ThreadPool]: Using postgres connection "list_postgres"
+[0m14:23:19.808108 [debug] [ThreadPool]: On list_postgres: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "enpal_assessment_project", "target_name": "dev", "connection_name": "list_postgres"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m14:23:19.808554 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:23:20.629160 [debug] [ThreadPool]: SQL status: SELECT 5 in 0.820 seconds
+[0m14:23:20.634620 [debug] [ThreadPool]: On list_postgres: Close
+[0m14:23:20.648236 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_postgres, now list_postgres_public_pipedrive_analytics)
+[0m14:23:20.661124 [debug] [ThreadPool]: Using postgres connection "list_postgres_public_pipedrive_analytics"
+[0m14:23:20.661863 [debug] [ThreadPool]: On list_postgres_public_pipedrive_analytics: BEGIN
+[0m14:23:20.662412 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m14:23:20.675180 [debug] [ThreadPool]: SQL status: BEGIN in 0.013 seconds
+[0m14:23:20.675827 [debug] [ThreadPool]: Using postgres connection "list_postgres_public_pipedrive_analytics"
+[0m14:23:20.676427 [debug] [ThreadPool]: On list_postgres_public_pipedrive_analytics: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "enpal_assessment_project", "target_name": "dev", "connection_name": "list_postgres_public_pipedrive_analytics"} */
+select
+      'postgres' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public_pipedrive_analytics'
+    union all
+    select
+      'postgres' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public_pipedrive_analytics'
+    union all
+    select
+      'postgres' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public_pipedrive_analytics'
+  
+[0m14:23:20.706501 [debug] [ThreadPool]: SQL status: SELECT 1 in 0.029 seconds
+[0m14:23:20.708804 [debug] [ThreadPool]: On list_postgres_public_pipedrive_analytics: ROLLBACK
+[0m14:23:20.709793 [debug] [ThreadPool]: On list_postgres_public_pipedrive_analytics: Close
+[0m14:23:20.719190 [debug] [MainThread]: Using postgres connection "master"
+[0m14:23:20.719837 [debug] [MainThread]: On master: BEGIN
+[0m14:23:20.720369 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:23:20.729826 [debug] [MainThread]: SQL status: BEGIN in 0.009 seconds
+[0m14:23:20.730405 [debug] [MainThread]: Using postgres connection "master"
+[0m14:23:20.731095 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "enpal_assessment_project", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m14:23:20.758614 [debug] [MainThread]: SQL status: SELECT 0 in 0.027 seconds
+[0m14:23:20.760871 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b5634fa3-d6dd-4f54-a14e-b6ca9707cc2c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f94092ce9d0>]}
+[0m14:23:20.761935 [debug] [MainThread]: On master: ROLLBACK
+[0m14:23:20.762866 [debug] [MainThread]: Using postgres connection "master"
+[0m14:23:20.763504 [debug] [MainThread]: On master: BEGIN
+[0m14:23:20.764490 [debug] [MainThread]: SQL status: BEGIN in 0.000 seconds
+[0m14:23:20.765130 [debug] [MainThread]: On master: COMMIT
+[0m14:23:20.765741 [debug] [MainThread]: Using postgres connection "master"
+[0m14:23:20.766336 [debug] [MainThread]: On master: COMMIT
+[0m14:23:20.767200 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m14:23:20.767839 [debug] [MainThread]: On master: Close
+[0m14:23:20.772581 [debug] [Thread-1  ]: Began running node model.enpal_assessment_project.test_model
+[0m14:23:20.773748 [info ] [Thread-1  ]: 1 of 1 START sql table model public_pipedrive_analytics.test_model ............. [RUN]
+[0m14:23:20.775198 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_postgres_public_pipedrive_analytics, now model.enpal_assessment_project.test_model)
+[0m14:23:20.775995 [debug] [Thread-1  ]: Began compiling node model.enpal_assessment_project.test_model
+[0m14:23:20.793136 [debug] [Thread-1  ]: Writing injected SQL for node "model.enpal_assessment_project.test_model"
+[0m14:23:20.796126 [debug] [Thread-1  ]: Began executing node model.enpal_assessment_project.test_model
+[0m14:23:20.851695 [debug] [Thread-1  ]: Writing runtime sql for node "model.enpal_assessment_project.test_model"
+[0m14:23:20.853190 [debug] [Thread-1  ]: Using postgres connection "model.enpal_assessment_project.test_model"
+[0m14:23:20.853774 [debug] [Thread-1  ]: On model.enpal_assessment_project.test_model: BEGIN
+[0m14:23:20.854290 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m14:23:20.869998 [debug] [Thread-1  ]: SQL status: BEGIN in 0.016 seconds
+[0m14:23:20.871009 [debug] [Thread-1  ]: Using postgres connection "model.enpal_assessment_project.test_model"
+[0m14:23:20.871754 [debug] [Thread-1  ]: On model.enpal_assessment_project.test_model: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "enpal_assessment_project", "target_name": "dev", "node_id": "model.enpal_assessment_project.test_model"} */
+
+  
+    
+
+  create  table "postgres"."public_pipedrive_analytics"."test_model__dbt_tmp"
+  
+  
+    as
+  
+  (
+    SELECT *
+FROM "postgres"."public"."stages"
+  );
+  
+[0m14:23:20.946085 [debug] [Thread-1  ]: SQL status: SELECT 9 in 0.074 seconds
+[0m14:23:20.959024 [debug] [Thread-1  ]: Using postgres connection "model.enpal_assessment_project.test_model"
+[0m14:23:20.959624 [debug] [Thread-1  ]: On model.enpal_assessment_project.test_model: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "enpal_assessment_project", "target_name": "dev", "node_id": "model.enpal_assessment_project.test_model"} */
+alter table "postgres"."public_pipedrive_analytics"."test_model" rename to "test_model__dbt_backup"
+[0m14:23:20.962441 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.002 seconds
+[0m14:23:20.966452 [debug] [Thread-1  ]: Using postgres connection "model.enpal_assessment_project.test_model"
+[0m14:23:20.966977 [debug] [Thread-1  ]: On model.enpal_assessment_project.test_model: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "enpal_assessment_project", "target_name": "dev", "node_id": "model.enpal_assessment_project.test_model"} */
+alter table "postgres"."public_pipedrive_analytics"."test_model__dbt_tmp" rename to "test_model"
+[0m14:23:20.979652 [debug] [Thread-1  ]: SQL status: ALTER TABLE in 0.012 seconds
+[0m14:23:21.000466 [debug] [Thread-1  ]: On model.enpal_assessment_project.test_model: COMMIT
+[0m14:23:21.001110 [debug] [Thread-1  ]: Using postgres connection "model.enpal_assessment_project.test_model"
+[0m14:23:21.001593 [debug] [Thread-1  ]: On model.enpal_assessment_project.test_model: COMMIT
+[0m14:23:21.003086 [debug] [Thread-1  ]: SQL status: COMMIT in 0.001 seconds
+[0m14:23:21.010997 [debug] [Thread-1  ]: Applying DROP to: "postgres"."public_pipedrive_analytics"."test_model__dbt_backup"
+[0m14:23:21.016460 [debug] [Thread-1  ]: Using postgres connection "model.enpal_assessment_project.test_model"
+[0m14:23:21.016992 [debug] [Thread-1  ]: On model.enpal_assessment_project.test_model: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "enpal_assessment_project", "target_name": "dev", "node_id": "model.enpal_assessment_project.test_model"} */
+drop table if exists "postgres"."public_pipedrive_analytics"."test_model__dbt_backup" cascade
+[0m14:23:21.056462 [debug] [Thread-1  ]: SQL status: DROP TABLE in 0.039 seconds
+[0m14:23:21.059563 [debug] [Thread-1  ]: On model.enpal_assessment_project.test_model: Close
+[0m14:23:21.062122 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'b5634fa3-d6dd-4f54-a14e-b6ca9707cc2c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f941a08e8e0>]}
+[0m14:23:21.062990 [info ] [Thread-1  ]: 1 of 1 OK created sql table model public_pipedrive_analytics.test_model ........ [[32mSELECT 9[0m in 0.29s]
+[0m14:23:21.063774 [debug] [Thread-1  ]: Finished running node model.enpal_assessment_project.test_model
+[0m14:23:21.065293 [debug] [MainThread]: Using postgres connection "master"
+[0m14:23:21.065867 [debug] [MainThread]: On master: BEGIN
+[0m14:23:21.066293 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m14:23:21.105267 [debug] [MainThread]: SQL status: BEGIN in 0.039 seconds
+[0m14:23:21.105896 [debug] [MainThread]: On master: COMMIT
+[0m14:23:21.106339 [debug] [MainThread]: Using postgres connection "master"
+[0m14:23:21.106746 [debug] [MainThread]: On master: COMMIT
+[0m14:23:21.107497 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m14:23:21.107994 [debug] [MainThread]: On master: Close
+[0m14:23:21.108579 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m14:23:21.108979 [debug] [MainThread]: Connection 'model.enpal_assessment_project.test_model' was properly closed.
+[0m14:23:21.109513 [info ] [MainThread]: 
+[0m14:23:21.110003 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 1.49 seconds (1.49s).
+[0m14:23:21.110883 [debug] [MainThread]: Command end result
+[0m14:23:21.146618 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/salmaragheb/Desktop/cursor/dbt_enpal_assessment/target/manifest.json
+[0m14:23:21.149944 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/salmaragheb/Desktop/cursor/dbt_enpal_assessment/target/semantic_manifest.json
+[0m14:23:21.158256 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/salmaragheb/Desktop/cursor/dbt_enpal_assessment/target/run_results.json
+[0m14:23:21.158726 [info ] [MainThread]: 
+[0m14:23:21.159279 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m14:23:21.159710 [info ] [MainThread]: 
+[0m14:23:21.160175 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
+[0m14:23:21.177663 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 3.6105545, "process_in_blocks": "0", "process_kernel_time": 1.227949, "process_mem_max_rss": "117882880", "process_out_blocks": "0", "process_user_time": 3.351824}
+[0m14:23:21.178609 [debug] [MainThread]: Command `dbt run` succeeded at 14:23:21.178484 after 3.61 seconds
+[0m14:23:21.179178 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f93f8232f10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f940945b310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f940945b220>]}
+[0m14:23:21.179711 [debug] [MainThread]: Flushing usage events
+[0m14:23:22.781337 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m14:55:18.074942 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8071d3af40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8060a9e310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8060a9ec10>]}
+
+
+============================== 14:55:18.083259 | 5b343e7a-1f2a-4f7e-bf4b-e6601c8003f0 ==============================
+[0m14:55:18.083259 [info ] [MainThread]: Running with dbt=1.10.20
+[0m14:55:18.084075 [debug] [MainThread]: running dbt with arguments {'profiles_dir': '/Users/salmaragheb/Desktop/cursor/dbt_enpal_assessment', 'write_json': 'True', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'introspect': 'True', 'log_cache_events': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'log_format': 'default', 'cache_selected_only': 'False', 'printer_width': '80', 'log_path': '/Users/salmaragheb/Desktop/cursor/dbt_enpal_assessment/logs', 'no_print': 'None', 'invocation_command': 'dbt build --select snap_users', 'use_colors': 'True', 'empty': 'False', 'use_experimental_parser': 'False', 'debug': 'False', 'send_anonymous_usage_stats': 'True', 'version_check': 'True', 'partial_parse': 'True', 'target_path': 'None', 'quiet': 'False', 'indirect_selection': 'eager'}
+[0m14:55:18.417579 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '5b343e7a-1f2a-4f7e-bf4b-e6601c8003f0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8070cbbc40>]}
+[0m14:55:18.493160 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '5b343e7a-1f2a-4f7e-bf4b-e6601c8003f0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f80729c5b20>]}
+[0m14:55:18.494580 [info ] [MainThread]: Registered adapter: postgres=1.9.1
+[0m14:55:18.648510 [debug] [MainThread]: checksum: a2dd717d56b7fa105aa967460f8408a71460d755763c8570e48c01c133187aea, vars: {}, profile: , target: , version: 1.10.20
+[0m14:55:18.826102 [debug] [MainThread]: Partial parsing enabled: 3 files deleted, 5 files added, 0 files changed.
+[0m14:55:18.826872 [debug] [MainThread]: Partial parsing: added file: enpal_assessment_project://models/staging/test_model.sql
+[0m14:55:18.827433 [debug] [MainThread]: Partial parsing: added file: enpal_assessment_project://models/staging/sources.yml
+[0m14:55:18.827894 [debug] [MainThread]: Partial parsing: added file: enpal_assessment_project://models/snapshots/snap_users.sql
+[0m14:55:18.828388 [debug] [MainThread]: Partial parsing: added file: enpal_assessment_project://models/snapshots/sources.yml
+[0m14:55:18.828895 [debug] [MainThread]: Partial parsing: added file: enpal_assessment_project://models/snapshots/schema.yml
+[0m14:55:18.829391 [debug] [MainThread]: Partial parsing: deleted file: enpal_assessment_project://models/staging/stg_users.sql
+[0m14:55:18.829786 [debug] [MainThread]: Partial parsing: deleted file: enpal_assessment_project://models/test_model.sql
+[0m14:55:19.079094 [error] [MainThread]: Encountered an error:
+Compilation Error in model snap_users (models/snapshots/snap_users.sql)
+  Encountered unknown tag 'snapshot'.
+    line 1
+      {% snapshot snap_users %}
+[0m14:55:19.084044 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": false, "command_wall_clock_time": 1.1551, "process_in_blocks": "0", "process_kernel_time": 0.896106, "process_mem_max_rss": "113172480", "process_out_blocks": "0", "process_user_time": 2.363903}
+[0m14:55:19.085136 [debug] [MainThread]: Command `dbt build` failed at 14:55:19.084785 after 1.16 seconds
+[0m14:55:19.085750 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8071d3af40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8060d91a60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8060d91490>]}
+[0m14:55:19.086403 [debug] [MainThread]: Flushing usage events
+[0m14:55:21.794223 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:01:19.772921 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7d400c2ee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7d502cc4f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7d502cc490>]}
+
+
+============================== 15:01:19.783360 | 25cc69f0-ddb7-444a-bc3a-3fa249149161 ==============================
+[0m15:01:19.783360 [info ] [MainThread]: Running with dbt=1.10.20
+[0m15:01:19.784274 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'use_experimental_parser': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'log_format': 'default', 'introspect': 'True', 'indirect_selection': 'eager', 'quiet': 'False', 'cache_selected_only': 'False', 'warn_error': 'None', 'static_parser': 'True', 'write_json': 'True', 'empty': 'False', 'fail_fast': 'False', 'target_path': 'None', 'debug': 'False', 'no_print': 'None', 'log_path': '/Users/salmaragheb/Desktop/cursor/dbt_enpal_assessment/logs', 'profiles_dir': '/Users/salmaragheb/Desktop/cursor/dbt_enpal_assessment', 'log_cache_events': 'False', 'send_anonymous_usage_stats': 'True', 'invocation_command': 'dbt build --select snap_users', 'partial_parse': 'True', 'use_colors': 'True'}
+[0m15:01:20.112016 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '25cc69f0-ddb7-444a-bc3a-3fa249149161', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7d308da7f0>]}
+[0m15:01:20.189245 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '25cc69f0-ddb7-444a-bc3a-3fa249149161', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7d402a95b0>]}
+[0m15:01:20.191306 [info ] [MainThread]: Registered adapter: postgres=1.9.1
+[0m15:01:20.406284 [debug] [MainThread]: checksum: a2dd717d56b7fa105aa967460f8408a71460d755763c8570e48c01c133187aea, vars: {}, profile: , target: , version: 1.10.20
+[0m15:01:20.586068 [debug] [MainThread]: Partial parsing enabled: 3 files deleted, 5 files added, 0 files changed.
+[0m15:01:20.586933 [debug] [MainThread]: Partial parsing: added file: enpal_assessment_project://models/staging/sources.yml
+[0m15:01:20.587504 [debug] [MainThread]: Partial parsing: added file: enpal_assessment_project://snapshots/schema.yml
+[0m15:01:20.588002 [debug] [MainThread]: Partial parsing: added file: enpal_assessment_project://snapshots/sources.yml
+[0m15:01:20.588459 [debug] [MainThread]: Partial parsing: added file: enpal_assessment_project://snapshots/snap_users.sql
+[0m15:01:20.588893 [debug] [MainThread]: Partial parsing: added file: enpal_assessment_project://models/staging/test_model.sql
+[0m15:01:20.589393 [debug] [MainThread]: Partial parsing: deleted file: enpal_assessment_project://models/test_model.sql
+[0m15:01:20.589784 [debug] [MainThread]: Partial parsing: deleted file: enpal_assessment_project://models/staging/stg_users.sql
+[0m15:01:21.609800 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '25cc69f0-ddb7-444a-bc3a-3fa249149161', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7d30d60d90>]}
+[0m15:01:21.765179 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/salmaragheb/Desktop/cursor/dbt_enpal_assessment/target/manifest.json
+[0m15:01:21.768317 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/salmaragheb/Desktop/cursor/dbt_enpal_assessment/target/semantic_manifest.json
+[0m15:01:21.804195 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '25cc69f0-ddb7-444a-bc3a-3fa249149161', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7d201669a0>]}
+[0m15:01:21.804950 [info ] [MainThread]: Found 6 models, 1 snapshot, 6 data tests, 6 sources, 447 macros
+[0m15:01:21.806943 [info ] [MainThread]: 
+[0m15:01:21.807467 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m15:01:21.807870 [info ] [MainThread]: 
+[0m15:01:21.808521 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m15:01:21.809625 [debug] [ThreadPool]: Acquiring new postgres connection 'list_postgres'
+[0m15:01:21.921358 [debug] [ThreadPool]: Using postgres connection "list_postgres"
+[0m15:01:21.921974 [debug] [ThreadPool]: On list_postgres: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "enpal_assessment_project", "target_name": "dev", "connection_name": "list_postgres"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m15:01:21.922417 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m15:01:22.270581 [debug] [ThreadPool]: SQL status: SELECT 5 in 0.347 seconds
+[0m15:01:22.272384 [debug] [ThreadPool]: On list_postgres: Close
+[0m15:01:22.278582 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_postgres, now list_postgres_public_pipedrive_analytics)
+[0m15:01:22.286237 [debug] [ThreadPool]: Using postgres connection "list_postgres_public_pipedrive_analytics"
+[0m15:01:22.287029 [debug] [ThreadPool]: On list_postgres_public_pipedrive_analytics: BEGIN
+[0m15:01:22.287442 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m15:01:22.296128 [debug] [ThreadPool]: SQL status: BEGIN in 0.009 seconds
+[0m15:01:22.296588 [debug] [ThreadPool]: Using postgres connection "list_postgres_public_pipedrive_analytics"
+[0m15:01:22.297046 [debug] [ThreadPool]: On list_postgres_public_pipedrive_analytics: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "enpal_assessment_project", "target_name": "dev", "connection_name": "list_postgres_public_pipedrive_analytics"} */
+select
+      'postgres' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public_pipedrive_analytics'
+    union all
+    select
+      'postgres' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public_pipedrive_analytics'
+    union all
+    select
+      'postgres' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public_pipedrive_analytics'
+  
+[0m15:01:22.315070 [debug] [ThreadPool]: SQL status: SELECT 1 in 0.018 seconds
+[0m15:01:22.316564 [debug] [ThreadPool]: On list_postgres_public_pipedrive_analytics: ROLLBACK
+[0m15:01:22.317231 [debug] [ThreadPool]: On list_postgres_public_pipedrive_analytics: Close
+[0m15:01:22.317909 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_postgres_public_pipedrive_analytics, now list_postgres_public)
+[0m15:01:22.321320 [debug] [ThreadPool]: Using postgres connection "list_postgres_public"
+[0m15:01:22.321790 [debug] [ThreadPool]: On list_postgres_public: BEGIN
+[0m15:01:22.322192 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m15:01:22.329797 [debug] [ThreadPool]: SQL status: BEGIN in 0.008 seconds
+[0m15:01:22.330224 [debug] [ThreadPool]: Using postgres connection "list_postgres_public"
+[0m15:01:22.330664 [debug] [ThreadPool]: On list_postgres_public: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "enpal_assessment_project", "target_name": "dev", "connection_name": "list_postgres_public"} */
+select
+      'postgres' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'postgres' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+    union all
+    select
+      'postgres' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public'
+  
+[0m15:01:22.335023 [debug] [ThreadPool]: SQL status: SELECT 6 in 0.004 seconds
+[0m15:01:22.336526 [debug] [ThreadPool]: On list_postgres_public: ROLLBACK
+[0m15:01:22.337212 [debug] [ThreadPool]: On list_postgres_public: Close
+[0m15:01:22.344067 [debug] [MainThread]: Using postgres connection "master"
+[0m15:01:22.344540 [debug] [MainThread]: On master: BEGIN
+[0m15:01:22.344930 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m15:01:22.352771 [debug] [MainThread]: SQL status: BEGIN in 0.008 seconds
+[0m15:01:22.353201 [debug] [MainThread]: Using postgres connection "master"
+[0m15:01:22.353740 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "enpal_assessment_project", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m15:01:22.364129 [debug] [MainThread]: SQL status: SELECT 0 in 0.010 seconds
+[0m15:01:22.365649 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '25cc69f0-ddb7-444a-bc3a-3fa249149161', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7d52b125b0>]}
+[0m15:01:22.366243 [debug] [MainThread]: On master: ROLLBACK
+[0m15:01:22.366898 [debug] [MainThread]: Using postgres connection "master"
+[0m15:01:22.367295 [debug] [MainThread]: On master: BEGIN
+[0m15:01:22.368233 [debug] [MainThread]: SQL status: BEGIN in 0.001 seconds
+[0m15:01:22.368636 [debug] [MainThread]: On master: COMMIT
+[0m15:01:22.369024 [debug] [MainThread]: Using postgres connection "master"
+[0m15:01:22.369400 [debug] [MainThread]: On master: COMMIT
+[0m15:01:22.370021 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m15:01:22.370428 [debug] [MainThread]: On master: Close
+[0m15:01:22.373854 [debug] [Thread-1  ]: Began running node snapshot.enpal_assessment_project.snap_users
+[0m15:01:22.374571 [info ] [Thread-1  ]: 1 of 7 START snapshot public.snap_users ........................................ [RUN]
+[0m15:01:22.375178 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_postgres_public, now snapshot.enpal_assessment_project.snap_users)
+[0m15:01:22.375698 [debug] [Thread-1  ]: Began compiling node snapshot.enpal_assessment_project.snap_users
+[0m15:01:22.389340 [debug] [Thread-1  ]: Began executing node snapshot.enpal_assessment_project.snap_users
+[0m15:01:22.484839 [debug] [Thread-1  ]: Using postgres connection "snapshot.enpal_assessment_project.snap_users"
+[0m15:01:22.485573 [debug] [Thread-1  ]: On snapshot.enpal_assessment_project.snap_users: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "enpal_assessment_project", "target_name": "dev", "node_id": "snapshot.enpal_assessment_project.snap_users"} */
+select * from (
+        
+    
+
+    select *,
+        md5(coalesce(cast(id as varchar ), '')
+         || '|' || coalesce(cast(now()::timestamp without time zone as varchar ), '')
+        ) as dbt_scd_id,
+        now()::timestamp without time zone as dbt_updated_at,
+        now()::timestamp without time zone as dbt_valid_from,
+        
+  
+  coalesce(nullif(now()::timestamp without time zone, now()::timestamp without time zone), null)
+  as dbt_valid_to
+from (
+        
+
+    
+
+    with source as (
+        select
+            id,
+            name as user_name,
+            email,
+            modified,
+            -- guard against duplicate user IDs from source replication
+            row_number() over (partition by id order by modified desc) as rn
+        from "postgres"."public"."users"
+    )
+
+    select id, user_name, email, modified
+    from source
+    where rn = 1
+
+    ) sbq
+
+
+
+    ) as __dbt_sbq
+    where false
+    limit 0
+
+[0m15:01:22.486147 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m15:01:22.508351 [debug] [Thread-1  ]: SQL status: SELECT 0 in 0.022 seconds
+[0m15:01:22.513016 [debug] [Thread-1  ]: Using postgres connection "snapshot.enpal_assessment_project.snap_users"
+[0m15:01:22.513584 [debug] [Thread-1  ]: On snapshot.enpal_assessment_project.snap_users: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "enpal_assessment_project", "target_name": "dev", "node_id": "snapshot.enpal_assessment_project.snap_users"} */
+select * from (
+        select now()::timestamp without time zone as dbt_snapshot_time
+    ) as __dbt_sbq
+    where false
+    limit 0
+
+[0m15:01:22.514611 [debug] [Thread-1  ]: SQL status: SELECT 0 in 0.000 seconds
+[0m15:01:22.515674 [debug] [Thread-1  ]: Writing runtime sql for node "snapshot.enpal_assessment_project.snap_users"
+[0m15:01:22.516730 [debug] [Thread-1  ]: Using postgres connection "snapshot.enpal_assessment_project.snap_users"
+[0m15:01:22.517240 [debug] [Thread-1  ]: On snapshot.enpal_assessment_project.snap_users: BEGIN
+[0m15:01:22.518086 [debug] [Thread-1  ]: SQL status: BEGIN in 0.000 seconds
+[0m15:01:22.518579 [debug] [Thread-1  ]: Using postgres connection "snapshot.enpal_assessment_project.snap_users"
+[0m15:01:22.519114 [debug] [Thread-1  ]: On snapshot.enpal_assessment_project.snap_users: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "enpal_assessment_project", "target_name": "dev", "node_id": "snapshot.enpal_assessment_project.snap_users"} */
+
+      
+  
+    
+
+  create  table "postgres"."public"."snap_users"
+  
+  
+    as
+  
+  (
+    
+    
+
+    select *,
+        md5(coalesce(cast(id as varchar ), '')
+         || '|' || coalesce(cast(now()::timestamp without time zone as varchar ), '')
+        ) as dbt_scd_id,
+        now()::timestamp without time zone as dbt_updated_at,
+        now()::timestamp without time zone as dbt_valid_from,
+        
+  
+  coalesce(nullif(now()::timestamp without time zone, now()::timestamp without time zone), null)
+  as dbt_valid_to
+from (
+        
+
+    
+
+    with source as (
+        select
+            id,
+            name as user_name,
+            email,
+            modified,
+            -- guard against duplicate user IDs from source replication
+            row_number() over (partition by id order by modified desc) as rn
+        from "postgres"."public"."users"
+    )
+
+    select id, user_name, email, modified
+    from source
+    where rn = 1
+
+    ) sbq
+
+
+
+  );
+  
+  
+[0m15:01:22.584818 [debug] [Thread-1  ]: SQL status: SELECT 1787 in 0.065 seconds
+[0m15:01:22.607956 [debug] [Thread-1  ]: On snapshot.enpal_assessment_project.snap_users: COMMIT
+[0m15:01:22.608563 [debug] [Thread-1  ]: Using postgres connection "snapshot.enpal_assessment_project.snap_users"
+[0m15:01:22.609067 [debug] [Thread-1  ]: On snapshot.enpal_assessment_project.snap_users: COMMIT
+[0m15:01:22.611384 [debug] [Thread-1  ]: SQL status: COMMIT in 0.002 seconds
+[0m15:01:22.614324 [debug] [Thread-1  ]: On snapshot.enpal_assessment_project.snap_users: Close
+[0m15:01:22.616767 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '25cc69f0-ddb7-444a-bc3a-3fa249149161', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7d52d06d90>]}
+[0m15:01:22.617913 [info ] [Thread-1  ]: 1 of 7 OK snapshotted public.snap_users ........................................ [[32mSELECT 1787[0m in 0.24s]
+[0m15:01:22.618717 [debug] [Thread-1  ]: Finished running node snapshot.enpal_assessment_project.snap_users
+[0m15:01:22.620036 [debug] [Thread-1  ]: Began running node test.enpal_assessment_project.not_null_snap_users_dbt_scd_id.ba2658e9a0
+[0m15:01:22.621255 [info ] [Thread-1  ]: 2 of 7 START test not_null_snap_users_dbt_scd_id ............................... [RUN]
+[0m15:01:22.624737 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly snapshot.enpal_assessment_project.snap_users, now test.enpal_assessment_project.not_null_snap_users_dbt_scd_id.ba2658e9a0)
+[0m15:01:22.625325 [debug] [Thread-1  ]: Began compiling node test.enpal_assessment_project.not_null_snap_users_dbt_scd_id.ba2658e9a0
+[0m15:01:22.639991 [debug] [Thread-1  ]: Writing injected SQL for node "test.enpal_assessment_project.not_null_snap_users_dbt_scd_id.ba2658e9a0"
+[0m15:01:22.641178 [debug] [Thread-1  ]: Began executing node test.enpal_assessment_project.not_null_snap_users_dbt_scd_id.ba2658e9a0
+[0m15:01:22.663897 [debug] [Thread-1  ]: Writing runtime sql for node "test.enpal_assessment_project.not_null_snap_users_dbt_scd_id.ba2658e9a0"
+[0m15:01:22.665023 [debug] [Thread-1  ]: Using postgres connection "test.enpal_assessment_project.not_null_snap_users_dbt_scd_id.ba2658e9a0"
+[0m15:01:22.665541 [debug] [Thread-1  ]: On test.enpal_assessment_project.not_null_snap_users_dbt_scd_id.ba2658e9a0: BEGIN
+[0m15:01:22.666018 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m15:01:22.674224 [debug] [Thread-1  ]: SQL status: BEGIN in 0.008 seconds
+[0m15:01:22.674875 [debug] [Thread-1  ]: Using postgres connection "test.enpal_assessment_project.not_null_snap_users_dbt_scd_id.ba2658e9a0"
+[0m15:01:22.675406 [debug] [Thread-1  ]: On test.enpal_assessment_project.not_null_snap_users_dbt_scd_id.ba2658e9a0: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "enpal_assessment_project", "target_name": "dev", "node_id": "test.enpal_assessment_project.not_null_snap_users_dbt_scd_id.ba2658e9a0"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select dbt_scd_id
+from "postgres"."public"."snap_users"
+where dbt_scd_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m15:01:22.680588 [debug] [Thread-1  ]: SQL status: SELECT 1 in 0.005 seconds
+[0m15:01:22.684773 [debug] [Thread-1  ]: On test.enpal_assessment_project.not_null_snap_users_dbt_scd_id.ba2658e9a0: ROLLBACK
+[0m15:01:22.685569 [debug] [Thread-1  ]: On test.enpal_assessment_project.not_null_snap_users_dbt_scd_id.ba2658e9a0: Close
+[0m15:01:22.686410 [info ] [Thread-1  ]: 2 of 7 PASS not_null_snap_users_dbt_scd_id ..................................... [[32mPASS[0m in 0.06s]
+[0m15:01:22.687181 [debug] [Thread-1  ]: Finished running node test.enpal_assessment_project.not_null_snap_users_dbt_scd_id.ba2658e9a0
+[0m15:01:22.687706 [debug] [Thread-1  ]: Began running node test.enpal_assessment_project.not_null_snap_users_email.6df8ab61f2
+[0m15:01:22.688321 [info ] [Thread-1  ]: 3 of 7 START test not_null_snap_users_email .................................... [RUN]
+[0m15:01:22.688970 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly test.enpal_assessment_project.not_null_snap_users_dbt_scd_id.ba2658e9a0, now test.enpal_assessment_project.not_null_snap_users_email.6df8ab61f2)
+[0m15:01:22.689491 [debug] [Thread-1  ]: Began compiling node test.enpal_assessment_project.not_null_snap_users_email.6df8ab61f2
+[0m15:01:22.696489 [debug] [Thread-1  ]: Writing injected SQL for node "test.enpal_assessment_project.not_null_snap_users_email.6df8ab61f2"
+[0m15:01:22.697556 [debug] [Thread-1  ]: Began executing node test.enpal_assessment_project.not_null_snap_users_email.6df8ab61f2
+[0m15:01:22.701538 [debug] [Thread-1  ]: Writing runtime sql for node "test.enpal_assessment_project.not_null_snap_users_email.6df8ab61f2"
+[0m15:01:22.702707 [debug] [Thread-1  ]: Using postgres connection "test.enpal_assessment_project.not_null_snap_users_email.6df8ab61f2"
+[0m15:01:22.703235 [debug] [Thread-1  ]: On test.enpal_assessment_project.not_null_snap_users_email.6df8ab61f2: BEGIN
+[0m15:01:22.703714 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m15:01:22.710319 [debug] [Thread-1  ]: SQL status: BEGIN in 0.007 seconds
+[0m15:01:22.711001 [debug] [Thread-1  ]: Using postgres connection "test.enpal_assessment_project.not_null_snap_users_email.6df8ab61f2"
+[0m15:01:22.711532 [debug] [Thread-1  ]: On test.enpal_assessment_project.not_null_snap_users_email.6df8ab61f2: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "enpal_assessment_project", "target_name": "dev", "node_id": "test.enpal_assessment_project.not_null_snap_users_email.6df8ab61f2"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select email
+from "postgres"."public"."snap_users"
+where email is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m15:01:22.716855 [debug] [Thread-1  ]: SQL status: SELECT 1 in 0.005 seconds
+[0m15:01:22.718894 [debug] [Thread-1  ]: On test.enpal_assessment_project.not_null_snap_users_email.6df8ab61f2: ROLLBACK
+[0m15:01:22.719661 [debug] [Thread-1  ]: On test.enpal_assessment_project.not_null_snap_users_email.6df8ab61f2: Close
+[0m15:01:22.720467 [info ] [Thread-1  ]: 3 of 7 PASS not_null_snap_users_email .......................................... [[32mPASS[0m in 0.03s]
+[0m15:01:22.721239 [debug] [Thread-1  ]: Finished running node test.enpal_assessment_project.not_null_snap_users_email.6df8ab61f2
+[0m15:01:22.721768 [debug] [Thread-1  ]: Began running node test.enpal_assessment_project.not_null_snap_users_id.d73ad0d74d
+[0m15:01:22.722343 [info ] [Thread-1  ]: 4 of 7 START test not_null_snap_users_id ....................................... [RUN]
+[0m15:01:22.722945 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly test.enpal_assessment_project.not_null_snap_users_email.6df8ab61f2, now test.enpal_assessment_project.not_null_snap_users_id.d73ad0d74d)
+[0m15:01:22.723449 [debug] [Thread-1  ]: Began compiling node test.enpal_assessment_project.not_null_snap_users_id.d73ad0d74d
+[0m15:01:22.729045 [debug] [Thread-1  ]: Writing injected SQL for node "test.enpal_assessment_project.not_null_snap_users_id.d73ad0d74d"
+[0m15:01:22.730034 [debug] [Thread-1  ]: Began executing node test.enpal_assessment_project.not_null_snap_users_id.d73ad0d74d
+[0m15:01:22.733625 [debug] [Thread-1  ]: Writing runtime sql for node "test.enpal_assessment_project.not_null_snap_users_id.d73ad0d74d"
+[0m15:01:22.734552 [debug] [Thread-1  ]: Using postgres connection "test.enpal_assessment_project.not_null_snap_users_id.d73ad0d74d"
+[0m15:01:22.735082 [debug] [Thread-1  ]: On test.enpal_assessment_project.not_null_snap_users_id.d73ad0d74d: BEGIN
+[0m15:01:22.735549 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m15:01:22.742694 [debug] [Thread-1  ]: SQL status: BEGIN in 0.007 seconds
+[0m15:01:22.743281 [debug] [Thread-1  ]: Using postgres connection "test.enpal_assessment_project.not_null_snap_users_id.d73ad0d74d"
+[0m15:01:22.743770 [debug] [Thread-1  ]: On test.enpal_assessment_project.not_null_snap_users_id.d73ad0d74d: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "enpal_assessment_project", "target_name": "dev", "node_id": "test.enpal_assessment_project.not_null_snap_users_id.d73ad0d74d"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select id
+from "postgres"."public"."snap_users"
+where id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m15:01:22.745541 [debug] [Thread-1  ]: SQL status: SELECT 1 in 0.001 seconds
+[0m15:01:22.747458 [debug] [Thread-1  ]: On test.enpal_assessment_project.not_null_snap_users_id.d73ad0d74d: ROLLBACK
+[0m15:01:22.748150 [debug] [Thread-1  ]: On test.enpal_assessment_project.not_null_snap_users_id.d73ad0d74d: Close
+[0m15:01:22.748901 [info ] [Thread-1  ]: 4 of 7 PASS not_null_snap_users_id ............................................. [[32mPASS[0m in 0.03s]
+[0m15:01:22.749635 [debug] [Thread-1  ]: Finished running node test.enpal_assessment_project.not_null_snap_users_id.d73ad0d74d
+[0m15:01:22.750159 [debug] [Thread-1  ]: Began running node test.enpal_assessment_project.not_null_snap_users_modified.c7efbbce50
+[0m15:01:22.750744 [info ] [Thread-1  ]: 5 of 7 START test not_null_snap_users_modified ................................. [RUN]
+[0m15:01:22.751424 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly test.enpal_assessment_project.not_null_snap_users_id.d73ad0d74d, now test.enpal_assessment_project.not_null_snap_users_modified.c7efbbce50)
+[0m15:01:22.751925 [debug] [Thread-1  ]: Began compiling node test.enpal_assessment_project.not_null_snap_users_modified.c7efbbce50
+[0m15:01:22.757715 [debug] [Thread-1  ]: Writing injected SQL for node "test.enpal_assessment_project.not_null_snap_users_modified.c7efbbce50"
+[0m15:01:22.760102 [debug] [Thread-1  ]: Began executing node test.enpal_assessment_project.not_null_snap_users_modified.c7efbbce50
+[0m15:01:22.763901 [debug] [Thread-1  ]: Writing runtime sql for node "test.enpal_assessment_project.not_null_snap_users_modified.c7efbbce50"
+[0m15:01:22.764820 [debug] [Thread-1  ]: Using postgres connection "test.enpal_assessment_project.not_null_snap_users_modified.c7efbbce50"
+[0m15:01:22.765336 [debug] [Thread-1  ]: On test.enpal_assessment_project.not_null_snap_users_modified.c7efbbce50: BEGIN
+[0m15:01:22.765812 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m15:01:22.772155 [debug] [Thread-1  ]: SQL status: BEGIN in 0.006 seconds
+[0m15:01:22.772757 [debug] [Thread-1  ]: Using postgres connection "test.enpal_assessment_project.not_null_snap_users_modified.c7efbbce50"
+[0m15:01:22.773259 [debug] [Thread-1  ]: On test.enpal_assessment_project.not_null_snap_users_modified.c7efbbce50: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "enpal_assessment_project", "target_name": "dev", "node_id": "test.enpal_assessment_project.not_null_snap_users_modified.c7efbbce50"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select modified
+from "postgres"."public"."snap_users"
+where modified is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m15:01:22.775019 [debug] [Thread-1  ]: SQL status: SELECT 1 in 0.001 seconds
+[0m15:01:22.776975 [debug] [Thread-1  ]: On test.enpal_assessment_project.not_null_snap_users_modified.c7efbbce50: ROLLBACK
+[0m15:01:22.777793 [debug] [Thread-1  ]: On test.enpal_assessment_project.not_null_snap_users_modified.c7efbbce50: Close
+[0m15:01:22.778583 [info ] [Thread-1  ]: 5 of 7 PASS not_null_snap_users_modified ....................................... [[32mPASS[0m in 0.03s]
+[0m15:01:22.779337 [debug] [Thread-1  ]: Finished running node test.enpal_assessment_project.not_null_snap_users_modified.c7efbbce50
+[0m15:01:22.779864 [debug] [Thread-1  ]: Began running node test.enpal_assessment_project.not_null_snap_users_user_name.79998d8829
+[0m15:01:22.780375 [info ] [Thread-1  ]: 6 of 7 START test not_null_snap_users_user_name ................................ [RUN]
+[0m15:01:22.781023 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly test.enpal_assessment_project.not_null_snap_users_modified.c7efbbce50, now test.enpal_assessment_project.not_null_snap_users_user_name.79998d8829)
+[0m15:01:22.781571 [debug] [Thread-1  ]: Began compiling node test.enpal_assessment_project.not_null_snap_users_user_name.79998d8829
+[0m15:01:22.788915 [debug] [Thread-1  ]: Writing injected SQL for node "test.enpal_assessment_project.not_null_snap_users_user_name.79998d8829"
+[0m15:01:22.791582 [debug] [Thread-1  ]: Began executing node test.enpal_assessment_project.not_null_snap_users_user_name.79998d8829
+[0m15:01:22.795089 [debug] [Thread-1  ]: Writing runtime sql for node "test.enpal_assessment_project.not_null_snap_users_user_name.79998d8829"
+[0m15:01:22.795944 [debug] [Thread-1  ]: Using postgres connection "test.enpal_assessment_project.not_null_snap_users_user_name.79998d8829"
+[0m15:01:22.796449 [debug] [Thread-1  ]: On test.enpal_assessment_project.not_null_snap_users_user_name.79998d8829: BEGIN
+[0m15:01:22.796914 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m15:01:22.803152 [debug] [Thread-1  ]: SQL status: BEGIN in 0.006 seconds
+[0m15:01:22.803800 [debug] [Thread-1  ]: Using postgres connection "test.enpal_assessment_project.not_null_snap_users_user_name.79998d8829"
+[0m15:01:22.804391 [debug] [Thread-1  ]: On test.enpal_assessment_project.not_null_snap_users_user_name.79998d8829: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "enpal_assessment_project", "target_name": "dev", "node_id": "test.enpal_assessment_project.not_null_snap_users_user_name.79998d8829"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select user_name
+from "postgres"."public"."snap_users"
+where user_name is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m15:01:22.806257 [debug] [Thread-1  ]: SQL status: SELECT 1 in 0.001 seconds
+[0m15:01:22.808238 [debug] [Thread-1  ]: On test.enpal_assessment_project.not_null_snap_users_user_name.79998d8829: ROLLBACK
+[0m15:01:22.808966 [debug] [Thread-1  ]: On test.enpal_assessment_project.not_null_snap_users_user_name.79998d8829: Close
+[0m15:01:22.809828 [info ] [Thread-1  ]: 6 of 7 PASS not_null_snap_users_user_name ...................................... [[32mPASS[0m in 0.03s]
+[0m15:01:22.810607 [debug] [Thread-1  ]: Finished running node test.enpal_assessment_project.not_null_snap_users_user_name.79998d8829
+[0m15:01:22.811149 [debug] [Thread-1  ]: Began running node test.enpal_assessment_project.unique_snap_users_dbt_scd_id.0b73555b12
+[0m15:01:22.811661 [info ] [Thread-1  ]: 7 of 7 START test unique_snap_users_dbt_scd_id ................................. [RUN]
+[0m15:01:22.812337 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly test.enpal_assessment_project.not_null_snap_users_user_name.79998d8829, now test.enpal_assessment_project.unique_snap_users_dbt_scd_id.0b73555b12)
+[0m15:01:22.812887 [debug] [Thread-1  ]: Began compiling node test.enpal_assessment_project.unique_snap_users_dbt_scd_id.0b73555b12
+[0m15:01:22.821488 [debug] [Thread-1  ]: Writing injected SQL for node "test.enpal_assessment_project.unique_snap_users_dbt_scd_id.0b73555b12"
+[0m15:01:22.822486 [debug] [Thread-1  ]: Began executing node test.enpal_assessment_project.unique_snap_users_dbt_scd_id.0b73555b12
+[0m15:01:22.826172 [debug] [Thread-1  ]: Writing runtime sql for node "test.enpal_assessment_project.unique_snap_users_dbt_scd_id.0b73555b12"
+[0m15:01:22.827152 [debug] [Thread-1  ]: Using postgres connection "test.enpal_assessment_project.unique_snap_users_dbt_scd_id.0b73555b12"
+[0m15:01:22.827658 [debug] [Thread-1  ]: On test.enpal_assessment_project.unique_snap_users_dbt_scd_id.0b73555b12: BEGIN
+[0m15:01:22.828125 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m15:01:22.834446 [debug] [Thread-1  ]: SQL status: BEGIN in 0.006 seconds
+[0m15:01:22.835017 [debug] [Thread-1  ]: Using postgres connection "test.enpal_assessment_project.unique_snap_users_dbt_scd_id.0b73555b12"
+[0m15:01:22.835543 [debug] [Thread-1  ]: On test.enpal_assessment_project.unique_snap_users_dbt_scd_id.0b73555b12: /* {"app": "dbt", "dbt_version": "1.10.20", "profile_name": "enpal_assessment_project", "target_name": "dev", "node_id": "test.enpal_assessment_project.unique_snap_users_dbt_scd_id.0b73555b12"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    dbt_scd_id as unique_field,
+    count(*) as n_records
+
+from "postgres"."public"."snap_users"
+where dbt_scd_id is not null
+group by dbt_scd_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m15:01:22.838745 [debug] [Thread-1  ]: SQL status: SELECT 1 in 0.003 seconds
+[0m15:01:22.840517 [debug] [Thread-1  ]: On test.enpal_assessment_project.unique_snap_users_dbt_scd_id.0b73555b12: ROLLBACK
+[0m15:01:22.841176 [debug] [Thread-1  ]: On test.enpal_assessment_project.unique_snap_users_dbt_scd_id.0b73555b12: Close
+[0m15:01:22.841928 [info ] [Thread-1  ]: 7 of 7 PASS unique_snap_users_dbt_scd_id ....................................... [[32mPASS[0m in 0.03s]
+[0m15:01:22.842669 [debug] [Thread-1  ]: Finished running node test.enpal_assessment_project.unique_snap_users_dbt_scd_id.0b73555b12
+[0m15:01:22.843830 [debug] [MainThread]: Using postgres connection "master"
+[0m15:01:22.844266 [debug] [MainThread]: On master: BEGIN
+[0m15:01:22.844638 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m15:01:22.852519 [debug] [MainThread]: SQL status: BEGIN in 0.008 seconds
+[0m15:01:22.853354 [debug] [MainThread]: On master: COMMIT
+[0m15:01:22.853786 [debug] [MainThread]: Using postgres connection "master"
+[0m15:01:22.854176 [debug] [MainThread]: On master: COMMIT
+[0m15:01:22.854768 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m15:01:22.855219 [debug] [MainThread]: On master: Close
+[0m15:01:22.855770 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m15:01:22.856154 [debug] [MainThread]: Connection 'test.enpal_assessment_project.unique_snap_users_dbt_scd_id.0b73555b12' was properly closed.
+[0m15:01:22.856608 [info ] [MainThread]: 
+[0m15:01:22.857056 [info ] [MainThread]: Finished running 1 snapshot, 6 data tests in 0 hours 0 minutes and 1.05 seconds (1.05s).
+[0m15:01:22.858928 [debug] [MainThread]: Command end result
+[0m15:01:22.892577 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/salmaragheb/Desktop/cursor/dbt_enpal_assessment/target/manifest.json
+[0m15:01:22.895077 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/salmaragheb/Desktop/cursor/dbt_enpal_assessment/target/semantic_manifest.json
+[0m15:01:22.903739 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/salmaragheb/Desktop/cursor/dbt_enpal_assessment/target/run_results.json
+[0m15:01:22.904199 [info ] [MainThread]: 
+[0m15:01:22.904722 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m15:01:22.905165 [info ] [MainThread]: 
+[0m15:01:22.905618 [info ] [MainThread]: Done. PASS=7 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=7
+[0m15:01:22.910127 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": true, "command_wall_clock_time": 3.2909534, "process_in_blocks": "0", "process_kernel_time": 1.124793, "process_mem_max_rss": "124772352", "process_out_blocks": "0", "process_user_time": 3.765205}
+[0m15:01:22.910928 [debug] [MainThread]: Command `dbt build` succeeded at 15:01:22.910806 after 3.29 seconds
+[0m15:01:22.911705 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7d400c2ee0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7d40263190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7d308da7f0>]}
+[0m15:01:22.912355 [debug] [MainThread]: Flushing usage events
+[0m15:01:23.720708 [debug] [MainThread]: An error was encountered while trying to flush usage events
