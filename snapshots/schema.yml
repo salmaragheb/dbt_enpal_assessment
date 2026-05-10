@@ -4,7 +4,7 @@ snapshots:
   - name: snap_users
     description: 
       Snapshot of the Pipedrive users table tracking historical changes to user records.
-      A new version is created whenever name or email changes. Deleted users are invalidated
+      A new version is created whenever name or email changes (scd2). Deleted users are invalidated
       rather than removed, preserving full history.
     columns:
       - name: dbt_scd_id

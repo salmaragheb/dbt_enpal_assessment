@@ -21,7 +21,7 @@ models:
         tests:
           - unique
           - not_null
-      - name: is_active
+      - name: activity_type_active
         description: "Indicates whether the activity type is currently active in Pipedrive."
         tests:
           - not_null

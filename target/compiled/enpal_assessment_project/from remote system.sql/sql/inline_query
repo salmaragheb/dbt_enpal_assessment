@@ -1,1 +1,1 @@
-select * from "postgres"."public"."activity" where activity_id in (select activity_id from "postgres"."public"."activity" group by activity_id having count(*) > 1) order by activity_id
+select distinct changed_field_key from "postgres"."public_pipedrive_analytics"."stg_deal_changes" 

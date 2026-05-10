@@ -2,7 +2,7 @@ version: 2
 
 models:
   - name: int_lost_reasons
-    description: >
+    description: 
       Intermediate model parsing the lost reason options from the fields JSON blob
       into a clean lookup table. Each row represents a single lost reason option.
     columns:
@@ -13,3 +13,25 @@ models:
           - not_null
       - name: lost_reason_label
         description: "Human-readable label of the lost reason (e.g. Pricing Issues, Product Mismatch)."
+
+  - name: int_field_values
+    description: 
+      Intermediate model that unpacks all field option sets from stg_fields into a
+      unified lookup table. Each row represents a single option for a given field.
+      Dynamically captures any new field options added in Pipedrive without requiring
+      model changes. Used in fct_deal_changes to resolve raw field values to
+      human-readable labels.
+    columns:
+      - name: field_key
+        description: "Internal key identifying the field this option belongs to (e.g. stage_id, lost_reason)."
+        tests:
+          - not_null
+      - name: value_id
+        description: "Raw option ID as stored in deal_changes new_value column."
+        tests:
+          - not_null
+      - name: value_label
+        description: "Human-readable label for the option (e.g. Lead Generation, Pricing Issues)."
+        tests:
+          - not_null
+

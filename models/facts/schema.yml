@@ -32,7 +32,7 @@ models:
         description: "Internal slug identifying the activity type (e.g. meeting, sc_2)."
         tests:
           - not_null
-      - name: is_activity_type_active
+      - name: activity_type_active
         description: "Indicates whether the activity type is currently active in Pipedrive."
         tests:
           - not_null
@@ -46,7 +46,7 @@ models:
           - not_null
 
   - name: fct_deal_changes
-    description: >
+    description: 
       Fact table representing the complete event log of all field changes on Pipedrive deals.
       Each row is an immutable business event capturing a single field mutation on a deal
       at a point in time. Enriched with human-readable labels for stage, lost reason, and
@@ -80,3 +80,4 @@ models:
       - name: user_name
         description: "Resolved user name from dim_users_latest. 
                       Populated only when changed_field_key = 'user_id', null otherwise."
+

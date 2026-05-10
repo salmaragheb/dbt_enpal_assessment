@@ -1,46 +1,9 @@
 
-      
-  
-    
+      insert into "postgres"."public_pipedrive_analytics"."fct_deal_changes" ("deal_id", "change_time", "changed_field_key", "new_value", "resolved_value", "user_name")
+    (
+        select "deal_id", "change_time", "changed_field_key", "new_value", "resolved_value", "user_name"
+        from "fct_deal_changes__dbt_tmp101221262675"
+    )
 
-  create  table "postgres"."public_pipedrive_analytics"."fct_deal_changes"
-  
-  
-    as
-  
-  (
-    
 
--- append strategy chosen because deal changes are immutable events.
--- once a change is recorded in pipedrive it is never updated.
--- note: in a BigQuery environment this model would be partitioned by change_time
--- and clustered by deal_id for query performance. omitted here as Postgres
--- does not support these configs natively through dbt.
-
-with source as (
-    select * from "postgres"."public_pipedrive_analytics"."stg_deal_changes"
-
-    
-)
-
-select
-    source.deal_id,
-    source.change_time,
-    source.changed_field_key,
-    source.new_value,
-    stages.stage_name,
-    lost_reasons.lost_reason_label,
-    users.user_name
-from source
-left join "postgres"."public_pipedrive_analytics"."stg_stages" stages
-    on source.changed_field_key = 'stage_id'
-    and source.new_value::text = stages.stage_id::text
-left join "postgres"."public_pipedrive_analytics"."int_lost_reasons" lost_reasons
-    on source.changed_field_key = 'lost_reason'
-    and source.new_value::text = lost_reasons.lost_reason_id::text
-left join "postgres"."public_pipedrive_analytics"."dim_users_latest" users
-    on source.changed_field_key = 'user_id'
-    and source.new_value::text = users.user_id::text
-  );
-  
   

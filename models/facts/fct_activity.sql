@@ -19,8 +19,8 @@ with source as (
         activity_types.activity_type_id,
         activity_types.activity_type_name,
         activity_types.activity_type_key,
-        activity_types.is_active         as is_activity_type_active,
-        activity.done,
+        activity_types.activity_type_active,
+        activity.done::boolean,
         activity.due_to
     from {{ ref('stg_activity') }} activity
     -- simple lookup join; if logic were more complex an intermediate model would be introduced first
@@ -31,6 +31,6 @@ with source as (
 select * from source
 
 {% if is_incremental() %}
-    where due_to >= (select max(due_to) from {{ this }})
+    where due_to > (select max(due_to) from {{ this }})
 {% endif %}
 

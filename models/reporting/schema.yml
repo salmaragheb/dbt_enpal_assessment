@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: rep_sales_funnel_monthly
+    description: 
+      Reporting model aggregating deal funnel activity by month. Each row represents
+      the count of distinct deals that touched a specific funnel step in a given month.
+      Combines stage transition events from fct_deal_changes and completed sales call
+      activities from fct_activity into a unified funnel view. Primary consumption
+      layer for sales funnel dashboards and month over month performance reporting.
+    columns:
+      - name: activity_month
+        description: "First day of the month in which the funnel activity occurred."
+        tests:
+          - not_null
+      - name: kpi_name
+        description: "Human-readable name of the funnel step (e.g. Lead Generation, Sales Call 1)."
+        tests:
+          - not_null
+      - name: funnel_step
+        description: "Structured identifier representing the position of the step in the funnel (e.g. Step 1, Step 2.1)."
+        tests:
+          - not_null
+      - name: deals_count
+        description: "Number of distinct deals that touched this funnel step in the given month."
+        tests:
+          - not_null

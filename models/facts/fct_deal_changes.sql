@@ -24,16 +24,14 @@ select
     source.change_time,
     source.changed_field_key,
     source.new_value,
-    stages.stage_name,
-    lost_reasons.lost_reason_label,
+    field_values.value_label  as resolved_value,
     users.user_name
 from source
-left join {{ ref('stg_stages') }} stages
-    on source.changed_field_key = 'stage_id'
-    and source.new_value::text = stages.stage_id::text
-left join {{ ref('int_lost_reasons') }} lost_reasons
-    on source.changed_field_key = 'lost_reason'
-    and source.new_value::text = lost_reasons.lost_reason_id::text
+-- single dynamic join resolving all option-based fields (stage, lost reason, etc.)
+-- automatically captures any new field options added in pipedrive without model changes
+left join {{ ref('int_field_values') }} field_values
+    on source.changed_field_key = field_values.field_key
+    and source.new_value::text = field_values.value_id
 left join {{ ref('dim_users_latest') }} users
     on source.changed_field_key = 'user_id'
     and source.new_value::text = users.user_id::text
