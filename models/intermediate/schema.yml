@@ -1,19 +1,6 @@
 version: 2
 
 models:
-  - name: int_lost_reasons
-    description: 
-      Intermediate model parsing the lost reason options from the fields JSON blob
-      into a clean lookup table. Each row represents a single lost reason option.
-    columns:
-      - name: lost_reason_id
-        description: "Unique identifier of the lost reason option."
-        tests:
-          - unique
-          - not_null
-      - name: lost_reason_label
-        description: "Human-readable label of the lost reason (e.g. Pricing Issues, Product Mismatch)."
-
   - name: int_field_values
     description: 
       Intermediate model that unpacks all field option sets from stg_fields into a

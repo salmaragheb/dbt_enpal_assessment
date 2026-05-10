@@ -152,7 +152,6 @@ flowchart LR
     end
 
     subgraph Intermediate
-        int_lost_reasons(int_lost_reasons)
         int_field_values(int_field_values)
     end
 
@@ -169,7 +168,6 @@ flowchart LR
     src_activity --> stg_activity --> fct_activity
     src_activity_types --> stg_activity_types --> fct_activity
     src_stages --> stg_stages --> fct_deal_changes
-    src_fields --> stg_fields --> int_lost_reasons
     src_fields --> stg_fields --> int_field_values
     src_deal_changes --> stg_deal_changes --> fct_deal_changes
     int_field_values --> fct_deal_changes
@@ -250,13 +248,6 @@ where only current user state is needed. Schema tests: `unique` and `not_null` o
 ---
 
 ### Intermediate Layer
-
-**`int_lost_reasons`** - the `fields` table stores lost reason options as a JSON blob
-rather than a dedicated reference table. This intermediate model parses that blob using
-`jsonb_array_elements` and unnests it into a clean lookup table with one row per lost
-reason option. Materialised as a **view** since it is a lightweight transformation with
-no storage justification. Schema tests: `unique` and `not_null` on `lost_reason_id`
-and `lost_reason_label`.
 
 **`int_field_values`** - a generalised extension of the lost reasons approach. Rather
 than parsing only lost reasons, this model unpacks all field option sets from `stg_fields`
