@@ -124,6 +124,61 @@ of this assessment, the data is kept as is.
 
 ---
 
+## Lineage
+
+```mermaid
+flowchart LR
+    subgraph Sources
+        src_users(users)
+        src_activity(activity)
+        src_activity_types(activity_types)
+        src_stages(stages)
+        src_fields(fields)
+        src_deal_changes(deal_changes)
+    end
+
+    subgraph Staging
+        stg_activity(stg_activity)
+        stg_activity_types(stg_activity_types)
+        stg_stages(stg_stages)
+        stg_fields(stg_fields)
+        stg_deal_changes(stg_deal_changes)
+    end
+
+    subgraph Snapshot & Dimensions
+        snap_users(snap_users)
+        dim_users(dim_users)
+        dim_users_latest(dim_users_latest)
+    end
+
+    subgraph Intermediate
+        int_lost_reasons(int_lost_reasons)
+        int_field_values(int_field_values)
+    end
+
+    subgraph Facts
+        fct_activity(fct_activity)
+        fct_deal_changes(fct_deal_changes)
+    end
+
+    subgraph Reporting
+        rep(rep_sales_funnel_monthly)
+    end
+
+    src_users --> snap_users --> dim_users --> dim_users_latest
+    src_activity --> stg_activity --> fct_activity
+    src_activity_types --> stg_activity_types --> fct_activity
+    src_stages --> stg_stages --> fct_deal_changes
+    src_fields --> stg_fields --> int_lost_reasons
+    src_fields --> stg_fields --> int_field_values
+    src_deal_changes --> stg_deal_changes --> fct_deal_changes
+    int_field_values --> fct_deal_changes
+    dim_users_latest --> fct_deal_changes
+    fct_deal_changes --> rep
+    fct_activity --> rep
+```
+---
+
 ## Modeling Choices
 
 ### Staging Layer
