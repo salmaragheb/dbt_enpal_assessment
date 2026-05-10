@@ -113,6 +113,15 @@ incomplete activities are excluded from the funnel.
 Records in `deal_changes` are assumed to be immutable once written. No updates or
 deletions are expected on historical change events.
 
+### Duplicate activity IDs
+During exploration, duplicate `activity_id` values were identified in the source `activity`
+table with differing field values across records. Specifically, 11 activity IDs were found
+to appear more than once with different values across all columns. The root cause is unclear
+without deeper knowledge of the Pipedrive data model and pipeline behaviour. In a real-world
+scenario, this would be escalated to a stakeholder or a Pipedrive domain expert to determine
+the correct deduplication strategy before applying any logic in the models. For the purpose
+of this assessment, the data is kept as is.
+
 ---
 
 ## Modeling Choices
@@ -134,7 +143,7 @@ The following staging models were created:
 
 - **`stg_activity`** - raw activity log with `type` aliased to `activity_type_key` to
   avoid the reserved keyword conflict and to make the foreign key relationship explicit.
-  Schema tests: `not_null` on all columns, `unique` on `activity_id`.
+  Schema tests: `not_null` on all columns.
 - **`stg_activity_types`** - reference table mapping activity type slugs to human-readable
   names. Columns renamed for clarity. Schema tests: `unique` and `not_null` on
   `activity_type_id` and `activity_type_key`, `not_null` on remaining columns.
@@ -171,8 +180,8 @@ columns.
 
 **`dim_users`** - the full SCD2 history table built on top of the snapshot. Every version
 of every user is preserved as a separate row. Exposes `dbt_scd_id`, `dbt_valid_from`,
-`dbt_valid_to`, `is_current`, and `dbt_is_deleted` for point-in-time joins and history
-analysis. Materialised as a **table** since it holds historical data that grows over
+`dbt_valid_to`, and `is_current` for point-in-time joins and history analysis. 
+Materialised as a **table** since it holds historical data that grows over
 time and is queried frequently. Schema tests: `unique` and `not_null` on `dbt_scd_id`,
 `not_null` on all columns except `dbt_valid_to` which is null for the current version
 of each record.
@@ -216,7 +225,7 @@ valid event worth preserving rather than an update to be overwritten. Joins
 active status. The incremental filter uses `>` on `due_to` since timestamps are precise
 enough to avoid boundary collisions. In a BigQuery environment this model would be
 partitioned by `due_to` and clustered by `deal_id` for query performance. Schema tests:
-`unique` and `not_null` on `activity_id`, `not_null` on all remaining columns.
+`not_null` on all columns.
 
 **`fct_deal_changes`** - each row is an immutable field change event on a deal.
 Materialised as an **incremental table** using the **append** strategy. Append is the

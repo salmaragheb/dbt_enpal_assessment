@@ -1,1 +1,1 @@
-select distinct changed_field_key from "postgres"."public_pipedrive_analytics"."stg_deal_changes" 
+select count(distinct activity_id) from "postgres"."public_pipedrive_analytics"."stg_activity"  having count(*)>1
